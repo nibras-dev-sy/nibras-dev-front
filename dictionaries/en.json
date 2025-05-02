@@ -144,7 +144,7 @@
       "types": [
         {
           "title": "Corporate Websites",
-          "description": "Professional websites that establish your brand identity and showcase your companys values, services, and achievements.",
+          "description": "Professional websites that establish your brand identity and showcase your company's values, services, and achievements.",
           "features": ["Brand-focused design", "Company information sections", "Career opportunities"]
         },
         {
@@ -258,9 +258,10 @@
     "story": {
       "badge": "Our Story",
       "title": "From Startup to Industry Leader",
+      "imageAlt": "Team of developers collaborating on a project in modern office with blue theme",
       "paragraph1": "Founded in 2015 by a small team of passionate developers, Nibras Dev began with a simple mission: to create technology solutions that make a real difference for businesses.",
       "paragraph2": "What started as a small operation has grown into a full-service development company with over 50 team members across multiple countries. Our growth has been driven by our commitment to quality, innovation, and client satisfaction.",
-      "paragraph3": "Today, were proud to have helped hundreds of businesses across various industries transform their digital presence and operations through custom software solutions.",
+      "paragraph3": "Today, we're proud to have helped hundreds of businesses across various industries transform their digital presence and operations through custom software solutions.",
       "founderName": "David Anderson",
       "founderTitle": "Founder & CEO"
     },
@@ -270,7 +271,7 @@
       "description": "Our mission and values guide everything we do, from how we build our products to how we interact with our clients and each other.",
       "missionTitle": "Our Mission",
       "missionText1": "To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage in a rapidly evolving digital landscape.",
-      "missionText2": "Were committed to creating software that not only meets the current needs of our clients but anticipates future challenges and opportunities in their industries.",
+      "missionText2": "We're committed to creating software that not only meets the current needs of our clients but anticipates future challenges and opportunities in their industries.",
       "values": [
         {
           "title": "Excellence",
@@ -287,6 +288,43 @@
         {
           "title": "Integrity",
           "description": "We conduct business with honesty, transparency, and ethical practices, building trust with our clients and within our team."
+        }
+      ]
+    },
+    "milestones": {
+      "badge": "Our Journey",
+      "title": "Key Milestones",
+      "description": "Our growth story is marked by continuous innovation, strategic expansion, and commitment to excellence.",
+      "timeline": [
+        {
+          "year": "2015: Foundation",
+          "description": "Nibras Dev was founded with a small team of 5 developers focused on custom web application development.",
+          "icon": "fa-flag"
+        },
+        {
+          "year": "2017: Mobile Expansion",
+          "description": "Launched our mobile development division, expanding our service offerings and team to 15 members.",
+          "icon": "fa-mobile-screen"
+        },
+        {
+          "year": "2019: International Growth",
+          "description": "Opened our first international office and expanded our team to 30 members serving clients globally.",
+          "icon": "fa-globe"
+        },
+        {
+          "year": "2021: Cloud Innovation",
+          "description": "Launched our cloud solutions division and completed our 100th successful project delivery.",
+          "icon": "fa-cloud"
+        },
+        {
+          "year": "2023: Industry Recognition",
+          "description": "Received multiple industry awards for innovation and expanded our team to 45 members.",
+          "icon": "fa-trophy"
+        },
+        {
+          "year": "2025: Today & Beyond",
+          "description": "Now with 50+ team members and 200+ completed projects, we continue to innovate and expand our global presence.",
+          "icon": "fa-rocket"
         }
       ]
     }
