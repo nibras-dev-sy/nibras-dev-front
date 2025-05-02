@@ -1,0 +1,330 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services"
+  },
+  "home": {
+    "title": "Welcome to our Bilingual App",
+    "description": "This is a Next.js application with support for both English and Arabic languages.",
+    "hero": {
+      "title": "Transform Your Ideas Into Digital Reality",
+      "description": "We build innovative software solutions that drive business growth and deliver exceptional user experiences.",
+      "services": "Our Services",
+      "contact": "Contact Us"
+    },
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "team": "Team Members",
+      "satisfaction": "Client Satisfaction"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "We specialize in creating powerful digital solutions for your business growth",
+      "business": {
+        "title": "Business Websites",
+        "description": "Professional, responsive business websites designed to establish your online presence and drive growth. We create engaging user experiences that convert visitors into customers.",
+        "features": [
+          "Custom Design & Development",
+          "Mobile Responsive",
+          "SEO Optimization",
+          "Content Management System"
+        ]
+      },
+      "ecommerce": {
+        "title": "Modern E-commerce",
+        "description": "Powerful e-commerce solutions that help you sell products online with ease. We build secure, scalable, and feature-rich online stores that drive sales.",
+        "features": [
+          "Custom Shopping Experience",
+          "Secure Payment Integration",
+          "Inventory Management",
+          "Analytics & Reporting"
+        ]
+      },
+      "learnMore": "Learn more",
+      "viewDetails": "View Service Details"
+    },
+    "about": {
+      "title": "About Nibras Dev",
+      "description1": "Founded in 2015, Nibras Dev has grown from a small startup to a leading development company with a global presence. Our mission is to empower businesses through innovative technology solutions.",
+      "description2": "With a team of skilled developers, designers, and strategists, were dedicated to delivering high-quality solutions that exceed client expectations and drive tangible business results.",
+      "tags": ["Innovative", "Client-focused", "Agile", "Collaborative"],
+      "learnMore": "Learn More About Us"
+    },
+    "technologies": {
+      "title": "Technologies We Work With",
+      "description": "We leverage the latest technologies to build robust and scalable solutions."
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "description": "Hear from businesses that have transformed their operations with our solutions.",
+      "clients": [
+        {
+          "name": "Michael Johnson",
+          "role": "CEO, TechInnovate",
+          "quote": "DevMatrix transformed our business with their innovative solutions. Their team's expertise and dedication to quality exceeded our expectations.",
+          "stars": 5
+        },
+        {
+          "name": "Sarah Williams",
+          "role": "CTO, GrowthFusion",
+          "quote": "Working with DevMatrix has been a game-changer for our company. Their technical expertise and commitment to our success is unmatched.",
+          "stars": 5
+        },
+        {
+          "name": "David Chen",
+          "role": "Product Manager, EcoSolutions",
+          "quote": "The team at DevMatrix delivered a complex project on time and within budget. Their technical skills and communication made the process seamless.",
+          "stars": 4.5
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "Ready to Start Your Project?",
+      "description": "Contact us today to discuss how we can help you achieve your digital goals.",
+      "button": "Get in Touch"
+    },
+    "footer": {
+      "terms": "Terms",
+      "privacy": "Privacy"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "description": "Comprehensive development solutions tailored to your business needs, delivering exceptional digital experiences that drive growth.",
+      "business": "Business Websites",
+      "ecommerce": "E-Commerce Solutions"
+    },
+    "overview": {
+      "title": "Comprehensive Development Services",
+      "description": "We offer end-to-end development solutions to help businesses transform their digital presence and achieve their goals.",
+      "custom": {
+        "title": "Custom Development",
+        "description": "Tailored solutions designed specifically for your business needs, ensuring optimal performance and scalability."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Intuitive and engaging user experiences that enhance user satisfaction and drive conversions."
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "description": "Speed and efficiency improvements to ensure your digital solutions perform at their best."
+      }
+    },
+    "business": {
+      "badge": "Business Websites",
+      "title": "Building Powerful Business Websites",
+      "description": "We create stunning, high-performance websites that establish your online presence and help you connect with your audience. Our business websites are:",
+      "features": [
+        {
+          "title": "Responsive Design",
+          "description": "Websites that look and function perfectly on all devices, from desktops to smartphones."
+        },
+        {
+          "title": "SEO Optimized",
+          "description": "Built with search engine visibility in mind to help your business rank higher and attract more visitors."
+        },
+        {
+          "title": "Fast Loading",
+          "description": "Optimized for speed to ensure visitors stay engaged and conversion rates remain high."
+        },
+        {
+          "title": "Secure & Reliable",
+          "description": "Implemented with the latest security measures to protect your data and your customers."
+        }
+      ],
+      "cta": "Start Your Website Project"
+    },
+    "websiteTypes": {
+      "title": "Business Website Solutions",
+      "description": "We develop various types of business websites to meet your specific goals and requirements.",
+      "types": [
+        {
+          "title": "Corporate Websites",
+          "description": "Professional websites that establish your brand identity and showcase your companys values, services, and achievements.",
+          "features": ["Brand-focused design", "Company information sections", "Career opportunities"]
+        },
+        {
+          "title": "Marketing Websites",
+          "description": "Conversion-focused websites designed to generate leads and promote specific products or services effectively.",
+          "features": ["Conversion optimization", "Lead capture forms", "Call-to-action focused"]
+        },
+        {
+          "title": "Content Websites",
+          "description": "Information-rich websites that position your business as an industry authority through blogs, resources, and media.",
+          "features": ["Blog functionality", "Resource libraries", "Content categorization"]
+        },
+        {
+          "title": "Service Websites",
+          "description": "Detailed websites that showcase your services, expertise, and process to attract potential clients.",
+          "features": ["Service descriptions", "Case studies", "Testimonials integration"]
+        },
+        {
+          "title": "Portfolio Websites",
+          "description": "Visually appealing websites that showcase your work, projects, and achievements to impress potential clients.",
+          "features": ["Project galleries", "Case study details", "Visual-focused design"]
+        },
+        {
+          "title": "Booking Websites",
+          "description": "Functional websites with appointment scheduling and reservation systems for service-based businesses.",
+          "features": ["Scheduling systems", "Payment integration", "Automated notifications"]
+        }
+      ]
+    },
+    "ecommerce": {
+      "badge": "E-Commerce",
+      "title": "Modern E-Commerce Solutions",
+      "description": "We build powerful online stores that drive sales and provide seamless shopping experiences for your customers. Our e-commerce solutions include:",
+      "features": [
+        {
+          "title": "User-Friendly Shopping Experience",
+          "description": "Intuitive navigation, product filtering, and search functionality to help customers find what they need quickly."
+        },
+        {
+          "title": "Secure Payment Processing",
+          "description": "Integration with multiple payment gateways to provide safe and convenient checkout options."
+        },
+        {
+          "title": "Inventory Management",
+          "description": "Robust systems to track stock levels, manage products, and automate inventory updates."
+        },
+        {
+          "title": "Analytics & Reporting",
+          "description": "Comprehensive insights into sales, customer behavior, and store performance to guide business decisions."
+        }
+      ],
+      "cta": "Start Your E-Commerce Project"
+    },
+    "platforms": {
+      "title": "E-Commerce Platforms We Work With",
+      "description": "We leverage leading e-commerce platforms to build scalable and feature-rich online stores.",
+      "platforms": [
+        {
+          "title": "Shopify",
+          "description": "Powerful and user-friendly platform ideal for businesses of all sizes, with extensive app ecosystem and excellent scalability."
+        },
+        {
+          "title": "WooCommerce",
+          "description": "Flexible WordPress-based solution offering complete customization control and extensive plugin options."
+        },
+        {
+          "title": "Magento",
+          "description": "Enterprise-grade platform with advanced features for large catalogs and complex business requirements."
+        }
+      ],
+      "featuresTitle": "E-Commerce Features We Implement",
+      "features": [
+        "Mobile Optimization",
+        "Shipping Integration",
+        "Discount Systems",
+        "Customer Accounts",
+        "Multi-language",
+        "Multi-currency",
+        "Reviews & Ratings",
+        "Live Chat Support"
+      ]
+    },
+    "process": {
+      "title": "Our Development Process",
+      "description": "We follow a structured approach to deliver high-quality solutions that meet your business objectives.",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Discovery & Planning",
+          "description": "We analyze your requirements, understand your business goals, and develop a comprehensive project plan."
+        },
+        {
+          "number": "2",
+          "title": "Design & Prototyping",
+          "description": "We create wireframes and visual designs that align with your brand identity and user experience goals."
+        },
+        {
+          "number": "3",
+          "title": "Development & Testing",
+          "description": "Our developers build your solution using the latest technologies and conduct thorough testing to ensure quality."
+        },
+        {
+          "number": "4",
+          "title": "Launch & Support",
+          "description": "We deploy your solution and provide ongoing support and maintenance to ensure optimal performance."
+        }
+      ]
+    }
+  },
+  "about": {
+    "story": {
+      "badge": "Our Story",
+      "title": "From Startup to Industry Leader",
+      "paragraph1": "Founded in 2015 by a small team of passionate developers, Nibras Dev began with a simple mission: to create technology solutions that make a real difference for businesses.",
+      "paragraph2": "What started as a small operation has grown into a full-service development company with over 50 team members across multiple countries. Our growth has been driven by our commitment to quality, innovation, and client satisfaction.",
+      "paragraph3": "Today, were proud to have helped hundreds of businesses across various industries transform their digital presence and operations through custom software solutions.",
+      "founderName": "David Anderson",
+      "founderTitle": "Founder & CEO"
+    },
+    "mission": {
+      "badge": "Our Foundation",
+      "title": "Mission & Values",
+      "description": "Our mission and values guide everything we do, from how we build our products to how we interact with our clients and each other.",
+      "missionTitle": "Our Mission",
+      "missionText1": "To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage in a rapidly evolving digital landscape.",
+      "missionText2": "Were committed to creating software that not only meets the current needs of our clients but anticipates future challenges and opportunities in their industries.",
+      "values": [
+        {
+          "title": "Excellence",
+          "description": "We strive for excellence in everything we do, from code quality to client communication, setting high standards for ourselves and our work."
+        },
+        {
+          "title": "Innovation",
+          "description": "We embrace creativity and forward-thinking, continuously exploring new technologies and approaches to solve complex problems."
+        },
+        {
+          "title": "Collaboration",
+          "description": "We believe in the power of teamwork, fostering an environment where diverse perspectives come together to create better solutions."
+        },
+        {
+          "title": "Integrity",
+          "description": "We conduct business with honesty, transparency, and ethical practices, building trust with our clients and within our team."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "companyDescription": "Transforming businesses through innovative software solutions and exceptional digital experiences.",
+    "services": {
+      "title": "Our Services",
+      "items": [
+        "Web Development",
+        "Mobile App Development",
+        "Cloud Solutions",
+        "Database Solutions",
+        "DevOps Services",
+        "Cybersecurity"
+      ]
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "items": [
+        { "label": "Home", "href": "" },
+        { "label": "About Us", "href": "/about" },
+        { "label": "Services", "href": "/services" },
+        { "label": "Contact Us", "href": "/contact" },
+        { "label": "Careers", "href": "/careers" },
+        { "label": "Blog", "href": "/blog" }
+      ]
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to our newsletter for the latest updates and insights.",
+      "placeholder": "Your email",
+      "submitLabel": "Subscribe"
+    },
+    "copyright": "All rights reserved.",
+    "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+  },
+  "languageSwitcher": {
+    "switchTo": "Switch to"
+  }
+}
