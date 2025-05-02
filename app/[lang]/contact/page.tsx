@@ -66,15 +66,6 @@ export default async function Contact({
               <h3 className="text-2xl font-bold text-gray-800 mb-8">{dictionary.contact.info.title}</h3>
               
               <div className="space-y-8">
-                <div id="location-info" className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
-                  <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
-                    <i className="fa-solid fa-location-dot text-blue-600 text-xl"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.location.title}</h4>
-                    <p className="text-gray-600 text-lg">{dictionary.contact.info.location.address}<br/>{dictionary.contact.info.location.city}</p>
-                  </div>
-                </div>
                 
                 <div id="phone-info" className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
                   <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
@@ -97,16 +88,6 @@ export default async function Contact({
                     <p className="text-gray-600 mt-1">{dictionary.contact.info.email.support}</p>
                   </div>
                 </div>
-                
-                <div id="hours-info" className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
-                  <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
-                    <i className="fa-solid fa-clock text-blue-600 text-xl"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.hours.title}</h4>
-                    <p className="text-gray-600">{dictionary.contact.info.hours.weekdays}<br/>{dictionary.contact.info.hours.weekend}</p>
-                  </div>
-                </div>
               </div>
               
               <div id="social-connect" className={`mt-10 ${lang === "ar" ? "text-right" : ""}`}>
@@ -125,19 +106,6 @@ export default async function Contact({
                     <i className="fa-brands fa-instagram text-lg"></i>
                   </span>
                 </div>
-              </div>
-            </div>
-            
-            <div id="map-container" className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-              <h3 className={`text-2xl font-bold text-gray-800 mb-6 ${lang === "ar" ? "text-right" : ""}`}>{dictionary.contact.info.map.title}</h3>
-              <div id="map" className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
-                <img className="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/45a5d4f968-e540573cc07883dc8af7.png" alt="map of San Francisco tech district with blue pin marker showing office location" />
-              </div>
-              <div className="mt-6 flex justify-center">
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className={`flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 ${lang === "ar" ? "flex-row-reverse" : ""}`}>
-                  <span className="font-medium">{dictionary.contact.info.map.directions}</span>
-                  <i className={`fa-solid ${lang === "ar" ? "fa-arrow-left mr-2" : "fa-arrow-right ml-2"}`}></i>
-                </a>
               </div>
             </div>
           </div>

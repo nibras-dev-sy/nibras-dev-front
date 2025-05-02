@@ -85,10 +85,6 @@
       "title": "Ready to Start Your Project?",
       "description": "Contact us today to discuss how we can help you achieve your digital goals.",
       "button": "Get in Touch"
-    },
-    "footer": {
-      "terms": "Terms",
-      "privacy": "Privacy"
     }
   },
   "services": {
@@ -330,37 +326,28 @@
     }
   },
   "footer": {
-    "companyDescription": "Transforming businesses through innovative software solutions and exceptional digital experiences.",
-    "services": {
-      "title": "Our Services",
-      "items": [
-        "Web Development",
-        "Mobile App Development",
-        "Cloud Solutions",
-        "Database Solutions",
-        "DevOps Services",
-        "Cybersecurity"
-      ]
-    },
-    "quickLinks": {
-      "title": "Quick Links",
-      "items": [
-        { "label": "Home", "href": "" },
-        { "label": "About Us", "href": "/about" },
-        { "label": "Services", "href": "/services" },
-        { "label": "Contact Us", "href": "/contact" },
-        { "label": "Careers", "href": "/careers" },
-        { "label": "Blog", "href": "/blog" }
-      ]
-    },
+    "about": "We are a leading web development company specializing in creating innovative digital solutions for businesses worldwide.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Info",
+    "webDev": "Web Development",
+    "mobileDev": "Mobile Development",
+    "uiUx": "UI/UX Design",
+    "cloud": "Cloud Services",
+    "address": "123 Tech Street, Silicon Valley, CA 94025",
+    "phone": "+963 9 33032684",
+    "email": "tech@nibrasdev.com",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM",
     "newsletter": {
-      "title": "Newsletter",
-      "description": "Subscribe to our newsletter for the latest updates and insights.",
-      "placeholder": "Your email",
-      "submitLabel": "Subscribe"
+      "title": "Subscribe to Our Newsletter",
+      "description": "Stay updated with our latest news and updates",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
     },
-    "copyright": "All rights reserved.",
-    "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
   },
   "languageSwitcher": {
     "switchTo": "Switch to"
@@ -411,12 +398,12 @@
       },
       "phone": {
         "title": "Phone Number",
-        "number": "+1 (555) 123-4567",
+        "number": "+963933032684",
         "hours": "Monday - Friday, 9:00 AM - 6:00 PM PST"
       },
       "email": {
         "title": "Email Address",
-        "primary": "info@devmatrix.com",
+        "primary": "tech@devmatrix.com",
         "support": "support@devmatrix.com"
       },
       "hours": {
