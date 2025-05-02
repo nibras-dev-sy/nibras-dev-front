@@ -22,7 +22,7 @@ export default async function Home({
       {/* Hero Section */}
       <section id="hero-section" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-32 pb-20 px-6">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center">
+          <div className={`flex flex-col md:flex-row items-center ${lang === "ar" ? "md:flex-row-reverse" : ""}`}>
             <div className="md:w-1/2 text-white mb-10 md:mb-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {dictionary.home.hero.title}
@@ -30,7 +30,7 @@ export default async function Home({
               <p className="text-blue-100 text-xl mb-8">
                 {dictionary.home.hero.description}
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className={`flex flex-col sm:flex-row gap-4 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}>
                 <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer">
                   {dictionary.home.hero.services}
                 </span>
@@ -51,15 +51,15 @@ export default async function Home({
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div id="stat-1" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">10+</div>
+              <div className="text-blue-600 text-4xl font-bold mb-2">3+</div>
               <div className="text-gray-600">{dictionary.home.stats.experience}</div>
             </div>
             <div id="stat-2" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">200+</div>
+              <div className="text-blue-600 text-4xl font-bold mb-2">10+</div>
               <div className="text-gray-600">{dictionary.home.stats.projects}</div>
             </div>
             <div id="stat-3" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">50+</div>
+              <div className="text-blue-600 text-4xl font-bold mb-2">10+</div>
               <div className="text-gray-600">{dictionary.home.stats.team}</div>
             </div>
             <div id="stat-4" className="text-center">
@@ -148,73 +148,6 @@ export default async function Home({
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Technologies Section */}
-      <section id="technologies-section" className="bg-gray-50 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{dictionary.home.technologies.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">{dictionary.home.technologies.description}</p>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { icon: "fa-brands fa-react", color: "text-blue-500", name: "React" },
-              { icon: "fa-brands fa-angular", color: "text-red-600", name: "Angular" },
-              { icon: "fa-brands fa-vuejs", color: "text-green-500", name: "Vue.js" },
-              { icon: "fa-brands fa-node-js", color: "text-green-600", name: "Node.js" },
-              { icon: "fa-brands fa-python", color: "text-blue-600", name: "Python" },
-              { icon: "fa-brands fa-aws", color: "text-orange-500", name: "AWS" },
-              { icon: "fa-brands fa-docker", color: "text-blue-600", name: "Docker" },
-              { icon: "fa-brands fa-android", color: "text-green-500", name: "Android" },
-              { icon: "fa-brands fa-apple", color: "text-gray-800", name: "iOS" },
-              { icon: "fa-brands fa-php", color: "text-purple-600", name: "PHP" },
-              { icon: "fa-brands fa-java", color: "text-red-500", name: "Java" },
-              { icon: "fa-brands fa-microsoft", color: "text-blue-500", name: ".NET" }
-            ].map((tech, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
-                  <i className={`${tech.icon} text-3xl ${tech.color}`}></i>
-                </div>
-                <span className="text-gray-700 font-medium">{tech.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials-section" className="bg-blue-700 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{dictionary.home.testimonials.title}</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">{dictionary.home.testimonials.description}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {dictionary.home.testimonials.clients.map((testimonial: Testimonial, index: number) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-                <div className="flex items-center mb-6">
-                  <img src={`https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-${index + 2}.jpg`} alt="Client" className="w-14 h-14 rounded-full mr-4" />
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-800">{testimonial.name}</h4>
-                    <p className="text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-6">{testimonial.quote}</p>
-                <div className="text-yellow-400">
-                  {[...Array(Math.floor(testimonial.stars))].map((_, i) => (
-                    <i key={i} className="fa-solid fa-star"></i>
-                  ))}
-                  {testimonial.stars % 1 !== 0 && (
-                    <i className="fa-solid fa-star-half-stroke"></i>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-    </div>
       </section>
     </>
   )

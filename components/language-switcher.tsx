@@ -27,7 +27,7 @@ export default function LanguageSwitcher({
   )
 
   const otherLang = currentLang === "en" ? "ar" : "en"
-  const otherLangName = currentLang === "en" ? "العربية" : "English"
+  const otherLangName = currentLang === "en" ? "Arabic" : "الإنجليزية"
 
   return (
     <Button
