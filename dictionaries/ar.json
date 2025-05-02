@@ -388,13 +388,12 @@
       },
       "phone": {
         "title": "رقم الهاتف",
-        "number": "+1 (555) 123-4567",
+        "number": "+963 9 33032684",
         "hours": "الاثنين - الجمعة، 9:00 صباحًا - 6:00 مساءً بتوقيت المحيط الهادئ"
       },
       "email": {
         "title": "البريد الإلكتروني",
-        "primary": "info@devmatrix.com",
-        "support": "support@devmatrix.com"
+        "primary": "tech@nibrasdev.com"
       },
       "hours": {
         "title": "ساعات العمل",

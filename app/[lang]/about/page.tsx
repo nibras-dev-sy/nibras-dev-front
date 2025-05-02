@@ -43,17 +43,6 @@ export default async function About({
               <p className="text-gray-600 mb-6">
                 {dictionary.about.story.paragraph3}
               </p>
-              <div className={`flex items-center ${lang === "ar" ? "space-x-reverse" : ""} space-x-4`}>
-                <img 
-                  src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" 
-                  alt={dictionary.about.story.founderName} 
-                  className="w-16 h-16 rounded-full border-4 border-blue-100"
-                />
-                <div>
-                  <h4 className="font-bold text-gray-800">{dictionary.about.story.founderName}</h4>
-                  <p className="text-blue-600">{dictionary.about.story.founderTitle}</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

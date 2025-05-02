@@ -398,13 +398,12 @@
       },
       "phone": {
         "title": "Phone Number",
-        "number": "+963933032684",
+        "number": "+963 9 33032684",
         "hours": "Monday - Friday, 9:00 AM - 6:00 PM PST"
       },
       "email": {
         "title": "Email Address",
-        "primary": "tech@devmatrix.com",
-        "support": "support@devmatrix.com"
+        "primary": "tech@nibrasdev.com"
       },
       "hours": {
         "title": "Business Hours",

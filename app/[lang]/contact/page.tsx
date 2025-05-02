@@ -74,7 +74,6 @@ export default async function Contact({
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.phone.title}</h4>
                     <p className="text-gray-600 text-lg">{dictionary.contact.info.phone.number}</p>
-                    <p className="text-gray-500 mt-1">{dictionary.contact.info.phone.hours}</p>
                   </div>
                 </div>
                 
@@ -85,7 +84,6 @@ export default async function Contact({
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.email.title}</h4>
                     <p className="text-gray-600 text-lg">{dictionary.contact.info.email.primary}</p>
-                    <p className="text-gray-600 mt-1">{dictionary.contact.info.email.support}</p>
                   </div>
                 </div>
               </div>
