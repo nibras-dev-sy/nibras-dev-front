@@ -364,5 +364,73 @@
   },
   "languageSwitcher": {
     "switchTo": "Switch to"
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "Reach out to our team to discuss your project requirements or get answers to your questions."
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "your@email.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Your phone number"
+      },
+      "service": {
+        "label": "Service Interested In",
+        "placeholder": "Select a service",
+        "options": {
+          "web": "Web Development",
+          "mobile": "Mobile App Development",
+          "cloud": "Cloud Solutions",
+          "database": "Database Solutions",
+          "devops": "DevOps Services",
+          "security": "Cybersecurity"
+        }
+      },
+      "message": {
+        "label": "Project Details",
+        "placeholder": "Tell us about your project..."
+      },
+      "submit": "Send Message"
+    },
+    "info": {
+      "title": "Our Contact Information",
+      "location": {
+        "title": "Office Location",
+        "address": "123 Tech Park, Innovation District",
+        "city": "San Francisco, CA 94105"
+      },
+      "phone": {
+        "title": "Phone Number",
+        "number": "+1 (555) 123-4567",
+        "hours": "Monday - Friday, 9:00 AM - 6:00 PM PST"
+      },
+      "email": {
+        "title": "Email Address",
+        "primary": "info@devmatrix.com",
+        "support": "support@devmatrix.com"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "weekend": "Saturday - Sunday: Closed"
+      },
+      "social": {
+        "title": "Connect With Us"
+      },
+      "map": {
+        "title": "Our Location",
+        "directions": "Get Directions"
+      }
+    }
   }
 }

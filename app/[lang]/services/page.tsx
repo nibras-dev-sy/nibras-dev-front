@@ -45,7 +45,7 @@ export default async function Services({
   return (
     <>
       {/* Services Hero Section */}
-      <section id="services-hero" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-32 pb-20 px-6">
+      <section id="services-hero" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
         <div className="container mx-auto">
           <div className={`max-w-3xl ${lang === "ar" ? "text-right" : ""}`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">

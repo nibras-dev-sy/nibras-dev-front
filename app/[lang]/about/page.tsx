@@ -13,7 +13,7 @@ export default async function About({
   return (
     <>
       {/* Our Story Section */}
-      <section id="our-story-section" className="bg-white py-20 px-6">
+      <section id="our-story-section" className="bg-white pt-32 py-20 px-6">
         <div className="container mx-auto">
           <div className={`flex flex-col lg:flex-row items-center gap-16 ${lang === "ar" ? "lg:flex-row-reverse" : ""}`}>
             <div id="story-image" className="lg:w-1/2">

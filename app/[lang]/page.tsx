@@ -20,7 +20,7 @@ export default async function Home({
   return (
     <>
       {/* Hero Section */}
-      <section id="hero-section" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-32 pb-20 px-6">
+      <section id="hero-section" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
         <div className="container mx-auto">
           <div className={`flex flex-col md:flex-row items-center ${lang === "ar" ? "md:flex-row-reverse" : ""}`}>
             <div className={`md:w-1/2 text-white mb-10 md:mb-0 ${lang === "ar" ? "md:text-right" : ""}`}>
