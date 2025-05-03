@@ -5,8 +5,8 @@ import type { Metadata } from "next"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bilingual Next.js App",
-  description: "A Next.js application with Arabic and English support",
+  title: "Nibras Dev",
+  description: "",
   generator: 'v0.dev'
 }
 
@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <title>Nibras Dev</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
       </head>
       <body className={inter.className}>{children}</body>
