@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-og-images": "node scripts/generate-og-images.js"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "latest",
@@ -61,7 +62,8 @@
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-rtl": "^0.9.0",
     "vaul": "^0.9.6",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "canvas": "^2.11.2"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",

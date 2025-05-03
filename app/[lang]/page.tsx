@@ -1,12 +1,42 @@
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/lib/i18n-config"
 import Image from "next/image"
+import type { Metadata } from 'next'
 
 interface Testimonial {
   name: string;
   role: string;
   quote: string;
   stars: number;
+}
+
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { lang } = await params
+  
+  return {
+    title: 'Home',
+    description: 'Transforming your business with innovative digital solutions. Web development, mobile apps, and custom software to drive your growth.',
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': '/en',
+        'ar': '/ar',
+      },
+    },
+    openGraph: {
+      title: "Nibras Dev | Web & Mobile Development",
+      description: "Transform your ideas into digital reality. Professional web and mobile development services.",
+      url: `https://nibrasdev.com/${lang}`,
+      images: [
+        {
+          url: '/og-home.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Nibras Dev Home Page',
+        },
+      ],
+    },
+  }
 }
 
 export default async function Home({
