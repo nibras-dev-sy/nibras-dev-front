@@ -29,12 +29,12 @@ export default function Footer({
                 height={40}
                 className={isRTL ? "ml-3" : "mr-3"}
               />
-              <span className="text-white font-bold text-xl">Nibras Dev</span>
+              <span className="text-white font-bold text-xl">{dictionary.navigation.title}</span>
             </div>
             <p className="text-gray-400 mb-6">
               {dictionary.footer.about}
             </p>
-            <div className={`flex ${isRTL ? "justify-start" : ""} space-x-4`}>
+            <div className={`flex space-x-4`}>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <i className="fab fa-facebook-f"></i>
               </a>
@@ -108,11 +108,11 @@ export default function Footer({
           <div>
             <h3 className="text-white font-bold text-lg mb-6">{dictionary.footer.contact}</h3>
             <ul className="space-y-3">
-              <li className={`flex items-start ${isRTL ? "flex-row-reverse" : ""}`}>
+              <li className={`flex items-start gap-3`}>
                 <i className={`fas fa-phone mt-1.5 ${isRTL ? "ml-3" : "mr-3"} text-blue-500`}></i>
-                <span>{dictionary.footer.phone}</span>
+                <span dir="ltr">{dictionary.footer.phone}</span>
               </li>
-              <li className={`flex items-start ${isRTL ? "flex-row-reverse" : ""}`}>
+              <li className={`flex items-start gap-3`}>
                 <i className={`fas fa-envelope mt-1.5 ${isRTL ? "ml-3" : "mr-3"} text-blue-500`}></i>
                 <span>{dictionary.footer.email}</span>
               </li>
@@ -122,11 +122,11 @@ export default function Footer({
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
-          <div className={`flex flex-col md:flex-row justify-between items-center ${isRTL ? "md:flex-row-reverse" : ""}`}>
+          <div className={`flex flex-col md:flex-row justify-between items-center`}>
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} Nibras Dev. {dictionary.footer.rights}
             </p>
-            <div className={`flex space-x-4 ${isRTL ? "space-x-reverse" : ""}`}>
+            <div className={`flex space-x-4`}>
               <Link href={`/${lang}/privacy`} className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 {dictionary.footer.privacy}
               </Link>

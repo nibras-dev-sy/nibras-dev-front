@@ -41,7 +41,7 @@ export default async function Contact({
           </p>
         </div>
         
-        <div className={`flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto ${lang === "ar" ? "lg:flex-row-reverse" : ""}`}>
+        <div className={`flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto`}>
           <div id="contact-form-container" className="lg:w-1/2">
             <form id="contact-form" className="bg-white p-8 rounded-lg shadow-lg border border-gray-100" aria-labelledby="form-heading">
               <h2 id="form-heading" className="text-2xl font-bold text-gray-800 mb-6">{dictionary.contact.form.title || "Send a Message"}</h2>
@@ -90,7 +90,7 @@ export default async function Contact({
               <h2 className="text-2xl font-bold text-gray-800 mb-8">{dictionary.contact.info.title}</h2>
               
               <div className="space-y-8">
-                <div id="phone-info" className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
+                <div id="phone-info" className={`flex items-start gap-3`}>
                   <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
                     <i className="fa-solid fa-phone text-blue-600 text-xl" aria-hidden="true"></i>
                   </div>
@@ -104,7 +104,7 @@ export default async function Contact({
                   </div>
                 </div>
                 
-                <div id="email-info" className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
+                <div id="email-info" className={`flex items-start gap-3`}>
                   <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
                     <i className="fa-solid fa-envelope text-blue-600 text-xl" aria-hidden="true"></i>
                   </div>
@@ -119,9 +119,9 @@ export default async function Contact({
                 </div>
               </div>
               
-              <div id="social-connect" className={`mt-10 ${lang === "ar" ? "text-right" : ""}`}>
+              <div id="social-connect" className={`mt-10`}>
                 <h3 className="font-semibold text-gray-800 mb-4 text-lg">{dictionary.contact.info.social.title}</h3>
-                <div className={`flex space-x-4 ${lang === "ar" ? "justify-end space-x-reverse" : ""}`} aria-label="Social Media Links">
+                <div className={`flex space-x-4`} aria-label="Social Media Links">
                   <a href="https://www.linkedin.com/company/nibrasdev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" aria-label="LinkedIn">
                     <i className="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i>
                   </a>

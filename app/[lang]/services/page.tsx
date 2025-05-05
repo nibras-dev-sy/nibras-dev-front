@@ -47,14 +47,14 @@ export default async function Services({
       {/* Services Hero Section */}
       <section id="services-hero" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
         <div className="container mx-auto">
-          <div className={`max-w-3xl ${lang === "ar" ? "text-right" : ""}`}>
+          <div className={`max-w-3xl`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               {dictionary.services.hero.title}
             </h1>
             <p className="text-blue-100 text-xl mb-8 max-w-2xl">
               {dictionary.services.hero.description}
             </p>
-            <div className={`flex flex-col sm:flex-row gap-4 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}>
+            <div className={`flex flex-col sm:flex-row gap-4`}>
               <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
                 {dictionary.services.hero.business}
               </span>
@@ -109,8 +109,8 @@ export default async function Services({
       {/* Business Websites Section */}
       <section id="business-websites" className="bg-gray-50 py-20 px-6">
         <div className="container mx-auto">
-          <div className={`flex flex-col lg:flex-row items-center gap-12 ${lang === "ar" ? "lg:flex-row-reverse" : ""}`}>
-            <div className={`lg:w-1/2 order-2 ${lang === "ar" ? "lg:order-2" : "lg:order-1"}`}>
+          <div className={`flex flex-col lg:flex-row items-center gap-12`}>
+            <div className={`lg:w-1/2 order-2 lg:order-1`}>
               <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">
                 {dictionary.services.business.badge}
               </span>
@@ -123,8 +123,8 @@ export default async function Services({
               
               <div className="space-y-4 mb-8">
                 {dictionary.services.business.features.map((feature: any, index: number) => (
-                  <div key={index} className={`flex items-start ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
-                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"} mt-1`}>
+                  <div key={index} className={`flex items-start`}>
+                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1`}>
                       <i className={`fa-solid ${index === 0 ? "fa-mobile-screen" : 
                                               index === 1 ? "fa-magnifying-glass" :
                                               index === 2 ? "fa-gauge-high" : "fa-lock"} text-blue-600`}></i>
@@ -142,7 +142,7 @@ export default async function Services({
               </span>
             </div>
             
-            <div className={`lg:w-1/2 order-1 ${lang === "ar" ? "lg:order-1" : "lg:order-2"} mb-10 lg:mb-0`}>
+            <div className={`lg:w-1/2 order-1 lg:order-2} mb-10 lg:mb-0`}>
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-100 rounded-lg z-0"></div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-200 rounded-lg z-0"></div>
@@ -188,8 +188,8 @@ export default async function Services({
                 <p className="text-gray-600 mb-6">{type.description}</p>
                 <ul className="text-gray-600 space-y-2 mb-6">
                   {type.features.map((feature: string, featureIndex: number) => (
-                    <li key={featureIndex} className={`flex items-center ${lang === "ar" ? "flex-row-reverse text-right" : ""}`}>
-                      <i className={`fa-solid fa-check text-green-500 ${lang === "ar" ? "ml-2" : "mr-2"}`}></i>
+                    <li key={featureIndex} className={`flex items-center`}>
+                      <i className={`fa-solid fa-check text-green-500 mr-2`}></i>
                       {feature}
                     </li>
                   ))}
@@ -203,8 +203,8 @@ export default async function Services({
       {/* E-Commerce Solutions Section */}
       <section id="ecommerce-solutions" className="bg-gray-50 py-20 px-6">
         <div className="container mx-auto">
-          <div className={`flex flex-col lg:flex-row items-center gap-12 ${lang === "ar" ? "lg:flex-row-reverse" : ""}`}>
-            <div className={`lg:w-1/2 mb-10 lg:mb-0 ${lang === "ar" ? "order-2" : ""}`}>
+          <div className={`flex flex-col lg:flex-row items-center gap-12`}>
+            <div className={`lg:w-1/2 mb-10 lg:mb-0`}>
               <div className="relative">
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-100 rounded-lg z-0"></div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-200 rounded-lg z-0"></div>
@@ -218,7 +218,7 @@ export default async function Services({
               </div>
             </div>
             
-            <div className={`lg:w-1/2 ${lang === "ar" ? "order-1 text-right" : ""}`}>
+            <div className={`lg:w-1/2`}>
               <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">
                 {dictionary.services.ecommerce.badge}
               </span>
@@ -231,8 +231,8 @@ export default async function Services({
               
               <div className="space-y-4 mb-8">
                 {dictionary.services.ecommerce.features.map((feature: any, index: number) => (
-                  <div key={index} className={`flex items-start ${lang === "ar" ? "flex-row-reverse" : ""}`}>
-                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"} mt-1`}>
+                  <div key={index} className={`flex items-start`}>
+                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1`}>
                       <i className={`fa-solid ${
                         index === 0 ? "fa-cart-shopping" :
                         index === 1 ? "fa-credit-card" :
@@ -350,7 +350,7 @@ export default async function Services({
           <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
             {dictionary.home.callToAction.description}
           </p>
-          <div className={`flex flex-col sm:flex-row justify-center gap-4 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}>
+          <div className={`flex flex-col sm:flex-row justify-center gap-4`}>
             <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 cursor-pointer">
               {dictionary.home.callToAction.button}
             </span>

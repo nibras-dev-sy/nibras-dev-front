@@ -15,7 +15,7 @@ export default async function About({
       {/* Our Story Section */}
       <section id="our-story-section" className="bg-white pt-32 py-20 px-6">
         <div className="container mx-auto">
-          <div className={`flex flex-col lg:flex-row items-center gap-16 ${lang === "ar" ? "lg:flex-row-reverse" : ""}`}>
+          <div className={`flex flex-col lg:flex-row items-center gap-16`}>
             <div id="story-image" className="lg:w-1/2">
               <div className="relative">
                 <div className={`absolute ${lang === "ar" ? "-right-6" : "-left-6"} -top-6 w-24 h-24 bg-blue-100 rounded-lg z-0`}></div>
@@ -95,10 +95,10 @@ export default async function About({
                     "fa-handshake"
                   } text-2xl text-blue-600`}></i>
                 </div>
-                <h3 className={`text-xl font-bold text-gray-800 mb-4 ${lang === "ar" ? "text-right" : ""}`}>
+                <h3 className={`text-xl font-bold text-gray-800 mb-4`}>
                   {value.title}
                 </h3>
-                <p className={`text-gray-600 ${lang === "ar" ? "text-right" : ""}`}>
+                <p className={`text-gray-600`}>
                   {value.description}
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default async function About({
                 <div key={index} className="flex flex-col md:flex-row items-center">
                   {index % 2 === 0 ? (
                     <>
-                      <div className={`md:w-1/2 md:pr-16 ${lang === "ar" ? "md:text-left" : "md:text-right"} mb-8 md:mb-0`}>
+                      <div className={`md:w-1/2 md:pr-16 md:text-rightmb-8 md:mb-0`}>
                         <div className="bg-white p-6 rounded-lg shadow-md">
                           <h3 className="text-xl font-bold text-gray-800 mb-2">{milestone.year}</h3>
                           <p className="text-gray-600">{milestone.description}</p>
@@ -149,7 +149,7 @@ export default async function About({
                       <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center z-10 mx-auto md:mx-0">
                         <i className={`fa-solid ${milestone.icon} text-white`}></i>
                       </div>
-                      <div className={`md:w-1/2 md:pl-16 ${lang === "ar" ? "md:text-right" : "md:text-left"} mb-8 md:mb-0`}>
+                      <div className={`md:w-1/2 md:pl-16 md:text-left mb-8 md:mb-0`}>
                         <div className="bg-white p-6 rounded-lg shadow-md">
                           <h3 className="text-xl font-bold text-gray-800 mb-2">{milestone.year}</h3>
                           <p className="text-gray-600">{milestone.description}</p>

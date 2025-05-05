@@ -52,15 +52,15 @@ export default async function Home({
       {/* Hero Section */}
       <section id="hero-section" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
         <div className="container mx-auto">
-          <div className={`flex flex-col md:flex-row items-center ${lang === "ar" ? "md:flex-row-reverse" : ""}`}>
-            <div className={`md:w-1/2 text-white mb-10 md:mb-0 ${lang === "ar" ? "md:text-right" : ""}`}>
+          <div className={`flex flex-col md:flex-row items-center`}>
+            <div className={`md:w-1/2 text-white mb-10 md:mb-0`}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {dictionary.home.hero.title}
               </h1>
               <p className="text-blue-100 text-xl mb-8">
                 {dictionary.home.hero.description}
               </p>
-              <div className={`flex flex-col sm:flex-row gap-4 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}>
+              <div className={`flex flex-col sm:flex-row gap-4`}>
                 <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
                   {dictionary.home.hero.services}
                 </span>
@@ -69,7 +69,7 @@ export default async function Home({
                 </span>
               </div>
             </div>
-            <div className={`md:w-1/2 flex ${lang === "ar" ? "justify-start" : "justify-center"}`}>
+            <div className={`md:w-1/2 flex justify-center`}>
               <img className="w-full max-w-lg rounded-lg shadow-2xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e76823a4a-93712e2e8e3385fa001e.png" alt="3D digital abstract" />
             </div>
           </div>

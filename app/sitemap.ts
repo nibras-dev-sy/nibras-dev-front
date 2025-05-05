@@ -1,27 +1,46 @@
 import { MetadataRoute } from 'next'
+import { i18n } from '@/lib/i18n-config'
+
+type RouteInfo = {
+  path: string;
+  priority: number;
+  changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Base URL for your site
-  const baseUrl = 'https://nibrasdev.com'
-  // Supported languages
-  const languages = ['en', 'ar']
-  // Pages in your site
-  const routes = ['', '/services', '/about', '/contact']
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nibrasdev.com'
+  
+  // Define your routes with their priorities and change frequencies
+  const routes: RouteInfo[] = [
+    { path: '', priority: 1.0, changeFrequency: 'weekly' },             // Home page
+    { path: '/services', priority: 0.8, changeFrequency: 'monthly' },   // Services page
+    { path: '/about', priority: 0.7, changeFrequency: 'monthly' },      // About page 
+    { path: '/contact', priority: 0.8, changeFrequency: 'monthly' },    // Contact page
+  ]
   
   const sitemap: MetadataRoute.Sitemap = []
   
-  // Generate entries for each page in each language
-  languages.forEach(lang => {
-    routes.forEach(route => {
-      const path = route === '' ? `/${lang}` : `/${lang}${route}`
+  // Generate sitemap entries for all routes in all supported languages
+  i18n.locales.forEach(lang => {
+    routes.forEach(({ path, priority, changeFrequency }) => {
+      const url = path === '' ? `/${lang}` : `/${lang}${path}`
       
       sitemap.push({
-        url: `${baseUrl}${path}`,
+        url: `${baseUrl}${url}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency,
+        priority,
       })
     })
+  })
+  
+  // Add the root URL that redirects to default language
+  sitemap.push({
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1.0,
   })
   
   return sitemap

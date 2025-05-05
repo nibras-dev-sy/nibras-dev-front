@@ -53,25 +53,25 @@ export default function Header({
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <div className={`flex items-center ${isRTL ? "order-last" : "order-first"}`}>
+        <div className={`flex items-center order-first`}>
           <Link href={`/${lang}`} className="flex items-center">
             <Image 
               src={isTransparentHeader && !isScrolled ? "/logo1.png" : "/logo2.png"} 
               alt="Logo" 
               width={40} 
               height={40}
-              className={isRTL ? "ml-2" : "mr-2"}
+              className="mr-2"
             />
             <span className={`font-bold text-xl ${
               isTransparentHeader && !isScrolled ? "text-white" : "text-blue-700"
             }`}>
-              Nibras Dev
+              {dictionary.navigation.title}
             </span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden md:flex items-center ${isRTL ? "space-x-reverse" : "space-x-1"} ${isRTL ? "order-first" : "order-last"}`}>
+        <nav className={`hidden md:flex items-center space-x-1 order-last`}>
           <Link 
             href={`/${lang}`} 
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-blue-600 hover:text-white ${
@@ -104,7 +104,7 @@ export default function Header({
           >
             {dictionary.navigation.contact}
           </Link>
-          <div className={isRTL ? "mr-4" : "ml-4"}>
+          <div className="ml-4">
             <LanguageSwitcher currentLang={lang} switchLabel={switchLabel} />
           </div>
         </nav>
@@ -162,7 +162,7 @@ export default function Header({
         className={`${mobileMenuOpen ? "block" : "hidden"} md:hidden bg-white shadow-lg`}
         id="mobile-menu"
       >
-        <div className={`px-2 pt-2 pb-3 space-y-1 ${isRTL ? "text-right" : "text-left"}`}>
+        <div className={`px-2 pt-2 pb-3 space-y-1 "text-left"`}>
           <Link
             href={`/${lang}`}
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-blue-600 hover:text-white"
