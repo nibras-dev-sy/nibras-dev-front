@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     }
   }
   
+  
   // English metadata
   return {
     title: dictionary.contact.hero.title,
