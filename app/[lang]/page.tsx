@@ -2,6 +2,8 @@ import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/lib/i18n-config"
 import Image from "next/image"
 import type { Metadata } from 'next'
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface Testimonial {
   name: string;
@@ -50,29 +52,62 @@ export default async function Home({
   return (
     <>
       {/* Hero Section */}
-      <section id="hero-section" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
-        <div className="container mx-auto">
-          <div className={`flex flex-col md:flex-row items-center`}>
-            <div className={`md:w-1/2 text-white mb-10 md:mb-0`}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                {dictionary.home.hero.title}
-              </h1>
-              <p className="text-blue-100 text-xl mb-8">
-                {dictionary.home.hero.description}
-              </p>
-              <div className={`flex flex-col sm:flex-row gap-4`}>
-                <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
-                  {dictionary.home.hero.services}
-                </span>
-                <span className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
-                  {dictionary.home.hero.contact}
-                </span>
+      <section id="hero" className="h-[800px] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(25,49,94,0.4)_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          <img className="absolute inset-0 w-full h-full object-cover opacity-10" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/949f8d8d60-74e9c390c262e1cf69a5.png" alt="abstract digital network lines and nodes, technology background with blue gradient overlay, minimalist tech pattern" />
+        </div>
+        
+        {/* Content */}
+        <div className="container relative mx-auto px-4 z-10 py-20 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              {dictionary.home.hero.title}
+            </h1>
+            <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-lg mx-auto md:mx-0">
+              {dictionary.home.hero.description}
+            </p>
+            <div className={`flex flex-wrap gap-4`}>
+                <Button 
+                  size="lg" 
+                  className="bg-white text-blue-700 hover:bg-blue-50 font-medium px-6"
+                  asChild
+                >
+                  <Link href={`/${lang}/products`}>
+                    {dictionary.home.hero.services}
+                  </Link>
+                </Button>
+                <Button
+                  size="lg" 
+                  className="text-white border-white hover:bg-white/10 font-medium px-6"
+                  asChild
+                >
+                  <Link href={`/${lang}/contact-us`}>
+                    {dictionary.home.hero.contact}
+                  </Link>
+                </Button>
               </div>
-            </div>
-            <div className={`md:w-1/2 flex justify-center`}>
-              <img className="w-full max-w-lg rounded-lg shadow-2xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e76823a4a-93712e2e8e3385fa001e.png" alt="3D digital abstract" />
-            </div>
           </div>
+          <div className="relative flex justify-center">
+            <div className="w-full h-80 md:h-96 lg:h-[450px] relative">
+            <div className="relative z-10 rounded-lg overflow-hidden">
+              <img className="w-full h-auto rounded-lg" src="/images/digital-globe-network.png" alt="Digital globe with network connections and circuit patterns held in hands, representing global technology solutions" />
+            </div>
+            <div className={`absolute -bottom-4 ${lang === 'ar' ? 'left-4' : 'right-4'} w-24 h-24 bg-blue-500 rounded-lg opacity-50 z-0`}></div>
+            <div className={`absolute -top-4 ${lang === 'ar' ? 'right-4' : 'left-4'} w-16 h-16 bg-indigo-600 rounded-lg opacity-50 z-0`}></div>
+          </div>
+          </div>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          <i className="fa-solid fa-chevron-down"></i>
         </div>
       </section>
 
