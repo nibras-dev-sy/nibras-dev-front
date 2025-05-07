@@ -7,7 +7,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   
   return {
     title: dictionary.contact.hero.title,
-    description: 'Get in touch with our team for professional web and mobile development services. Let\'s discuss your project today.',
+    description: 'Get in touch with our development team for professional web and mobile solutions. We offer free consultations to discuss your project needs and goals.',
+    keywords: ['contact nibras dev', 'hire web developer', 'software development consultation', 'get a quote', 'project inquiry', 'web development services'],
     alternates: {
       canonical: `/${params.lang}/contact`,
       languages: {
@@ -17,8 +18,16 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     },
     openGraph: {
       title: `${dictionary.contact.hero.title} | Nibras Dev`,
-      description: 'Contact our team of experts for your next digital project. We\'re here to help you succeed.',
+      description: 'Reach out to our team of experts for your next digital project. We\'re here to help transform your ideas into reality.',
       url: `https://nibrasdev.com/${params.lang}/contact`,
+      images: [
+        {
+          url: '/og-contact.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Contact Nibras Dev',
+        },
+      ],
     },
   }
 }

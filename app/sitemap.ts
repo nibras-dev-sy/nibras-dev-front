@@ -5,6 +5,7 @@ type RouteInfo = {
   path: string;
   priority: number;
   changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  lastModified?: Date;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,22 +14,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // Define your routes with their priorities and change frequencies
   const routes: RouteInfo[] = [
-    { path: '', priority: 1.0, changeFrequency: 'weekly' },             // Home page
-    { path: '/services', priority: 0.8, changeFrequency: 'monthly' },   // Services page
-    { path: '/about', priority: 0.7, changeFrequency: 'monthly' },      // About page 
-    { path: '/contact', priority: 0.8, changeFrequency: 'monthly' },    // Contact page
+    { 
+      path: '', 
+      priority: 1.0, 
+      changeFrequency: 'weekly',
+      lastModified: new Date() 
+    },
+    { 
+      path: '/services', 
+      priority: 0.9, 
+      changeFrequency: 'monthly',
+      lastModified: new Date() 
+    },
+    { 
+      path: '/about', 
+      priority: 0.8, 
+      changeFrequency: 'monthly',
+      lastModified: new Date() 
+    },
+    { 
+      path: '/contact', 
+      priority: 0.8, 
+      changeFrequency: 'monthly',
+      lastModified: new Date() 
+    },
+    // Add any additional pages or dynamic routes here
   ]
   
   const sitemap: MetadataRoute.Sitemap = []
   
   // Generate sitemap entries for all routes in all supported languages
   i18n.locales.forEach(lang => {
-    routes.forEach(({ path, priority, changeFrequency }) => {
+    routes.forEach(({ path, priority, changeFrequency, lastModified }) => {
       const url = path === '' ? `/${lang}` : `/${lang}${path}`
       
       sitemap.push({
         url: `${baseUrl}${url}`,
-        lastModified: new Date(),
+        lastModified: lastModified || new Date(),
         changeFrequency,
         priority,
       })

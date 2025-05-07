@@ -1,4 +1,6 @@
 import { getDictionary } from "@/lib/dictionary"
+import type { Locale } from "@/lib/i18n-config"
+import type { Metadata } from 'next'
 
 interface Platform {
   icon: string;
@@ -10,6 +12,36 @@ interface ProcessStep {
   number: string;
   title: string;
   description: string;
+}
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const dictionary = await getDictionary(params.lang as Locale)
+  
+  return {
+    title: 'Our Services',
+    description: 'Comprehensive web and mobile development services including business websites, e-commerce solutions, custom software development and UI/UX design.',
+    keywords: ['web development services', 'mobile app development', 'e-commerce solutions', 'business websites', 'custom software', 'UI/UX design'],
+    alternates: {
+      canonical: `/${params.lang}/services`,
+      languages: {
+        'en': '/en/services',
+        'ar': '/ar/services',
+      },
+    },
+    openGraph: {
+      title: `Web & Mobile Development Services | Nibras Dev`,
+      description: 'Explore our comprehensive development services for business growth. From websites to e-commerce platforms and custom applications.',
+      url: `https://nibrasdev.com/${params.lang}/services`,
+      images: [
+        {
+          url: '/og-services.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Nibras Dev Services',
+        },
+      ],
+    },
+  }
 }
 
 export default async function Services({

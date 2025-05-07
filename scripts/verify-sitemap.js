@@ -7,85 +7,119 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
-const { parse } = require('url');
+const { promisify } = require('util');
+const { parse } = require('fast-xml-parser');
 
-// Define base URL - change this to your production URL when testing for real
-const baseUrl = 'https://nibrasdev.com';
+const readFile = promisify(fs.readFile);
 
-// Function to test a URL
-async function testUrl(url) {
+// Function to fetch a URL and check status
+async function checkUrl(url) {
   return new Promise((resolve) => {
-    const protocol = url.startsWith('https') ? https : http;
-    const req = protocol.get(url, (res) => {
+    const client = url.startsWith('https') ? https : http;
+    
+    const req = client.get(url, (res) => {
       const statusCode = res.statusCode;
       resolve({
         url,
         status: statusCode,
-        success: statusCode >= 200 && statusCode < 400,
+        ok: statusCode >= 200 && statusCode < 400
       });
     });
-
-    req.on('error', (error) => {
+    
+    req.on('error', (err) => {
       resolve({
         url,
-        status: 'Error',
-        success: false,
-        message: error.message,
+        status: 0,
+        ok: false,
+        error: err.message
       });
     });
-
-    req.end();
-  });
-}
-
-// Function to read the sitemap URLs
-async function verifySitemap() {
-  console.log('Verifying sitemap URLs...');
-
-  // These are the expected URLs based on your sitemap.js implementation
-  const languages = ['en', 'ar'];
-  const routes = ['', '/services', '/about', '/contact'];
-  
-  const expectedUrls = [];
-  
-  // Add language-specific URLs
-  languages.forEach(lang => {
-    routes.forEach(route => {
-      const path = route === '' ? `/${lang}` : `/${lang}${route}`;
-      expectedUrls.push(`${baseUrl}${path}`);
-    });
-  });
-  
-  // Add root URL
-  expectedUrls.push(baseUrl);
-  
-  console.log(`Found ${expectedUrls.length} URLs to verify`);
-  
-  // Test each URL
-  const results = [];
-  for (const url of expectedUrls) {
-    process.stdout.write(`Testing ${url}... `);
-    const result = await testUrl(url);
-    results.push(result);
     
-    if (result.success) {
-      process.stdout.write(`✅ (${result.status})\n`);
-    } else {
-      process.stdout.write(`❌ (${result.status})\n`);
-    }
-  }
-  
-  // Print summary
-  console.log('\nSummary:');
-  const successful = results.filter(r => r.success).length;
-  console.log(`Successful: ${successful}/${results.length} (${Math.round(successful/results.length*100)}%)`);
-  
-  if (successful !== results.length) {
-    console.log('\nFailed URLs:');
-    results.filter(r => !r.success).forEach(r => {
-      console.log(`- ${r.url} (${r.status}${r.message ? `: ${r.message}` : ''})`);
+    // Set a timeout of 10 seconds
+    req.setTimeout(10000, () => {
+      req.abort();
+      resolve({
+        url,
+        status: 0,
+        ok: false,
+        error: 'Request timed out'
+      });
     });
+  });
+}
+
+async function verifySitemap() {
+  try {
+    // Read sitemap.xml
+    let sitemapPath;
+    if (fs.existsSync(path.join(process.cwd(), 'public', 'sitemap.xml'))) {
+      sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+    } else if (fs.existsSync(path.join(process.cwd(), '.next', 'server', 'app', 'sitemap.xml'))){
+      sitemapPath = path.join(process.cwd(), '.next', 'server', 'app', 'sitemap.xml');
+    } else {
+      throw new Error('sitemap.xml not found. Please build the app first using "npm run build"');
+    }
+    
+    const sitemapXml = await readFile(sitemapPath, 'utf8');
+    
+    // Parse XML
+    const result = parse(sitemapXml, { ignoreAttributes: false });
+    if (!result.urlset || !result.urlset.url) {
+      throw new Error('Invalid sitemap format');
+    }
+    
+    // Extract URLs
+    const urls = Array.isArray(result.urlset.url) 
+      ? result.urlset.url.map(u => u.loc) 
+      : [result.urlset.url.loc];
+    
+    console.log(`Found ${urls.length} URLs in sitemap`);
+    
+    // Test each URL
+    const results = [];
+    for (const url of urls) {
+      console.log(`Checking ${url}...`);
+      const result = await checkUrl(url);
+      results.push(result);
+    }
+    
+    // Print report
+    console.log('\nSitemap Verification Report:');
+    console.log('============================');
+    
+    const successful = results.filter(r => r.ok);
+    const failed = results.filter(r => !r.ok);
+    
+    console.log(`Total URLs: ${results.length}`);
+    console.log(`Successful: ${successful.length}`);
+    console.log(`Failed: ${failed.length}`);
+    
+    if (failed.length > 0) {
+      console.log('\nFailed URLs:');
+      failed.forEach(result => {
+        console.log(`- ${result.url} (Status: ${result.status}${result.error ? `, Error: ${result.error}` : ''})`);
+      });
+    }
+    
+    return failed.length === 0;
+  } catch (error) {
+    console.error('Error verifying sitemap:', error.message);
+    return false;
   }
 }
 
-verifySitemap().catch(console.error); 
+// Run the verification
+verifySitemap()
+  .then(success => {
+    if (success) {
+      console.log('\nSitemap verification completed successfully!');
+      process.exit(0);
+    } else {
+      console.log('\nSitemap verification completed with errors.');
+      process.exit(1);
+    }
+  })
+  .catch(err => {
+    console.error('Unhandled error:', err);
+    process.exit(1);
+  }); 

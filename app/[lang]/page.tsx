@@ -14,10 +14,12 @@ interface Testimonial {
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { lang } = await params
-
+  const dictionary = await getDictionary(lang as Locale)
+  
   return {
-    title: 'Home',
-    description: 'Transforming your business with innovative digital solutions. Web development, mobile apps, and custom software to drive your growth.',
+    title: 'Professional Web & Mobile Development',
+    description: 'Transforming business ideas into digital reality with cutting-edge web development, mobile applications, and custom software solutions designed for growth.',
+    keywords: ['web development', 'mobile app development', 'custom software', 'responsive design', 'UI/UX design', 'business websites', 'e-commerce solutions', 'digital transformation'],
     alternates: {
       canonical: `/${lang}`,
       languages: {
@@ -26,17 +28,18 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
       },
     },
     openGraph: {
-      title: "Nibras Dev | Web & Mobile Development",
-      description: "Transform your ideas into digital reality. Professional web and mobile development services.",
+      title: "Nibras Dev | Transform Your Business with Digital Solutions",
+      description: "Professional web and mobile development services that drive business growth through innovative design and exceptional performance.",
       url: `https://nibrasdev.com/${lang}`,
       images: [
         {
           url: '/og-home.jpg',
           width: 1200,
           height: 630,
-          alt: 'Nibras Dev Home Page',
+          alt: 'Nibras Dev - Web & Mobile Development',
         },
       ],
+      type: 'website',
     },
   }
 }
