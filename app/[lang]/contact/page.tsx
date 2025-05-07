@@ -97,7 +97,7 @@ export default async function Contact({
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.phone.title}</h3>
                     <p className="text-gray-600 text-lg">
-                      <a href={`tel:${dictionary.contact.info.phone.number?.replace(/\s+/g, '')}`} className="hover:text-blue-600 transition-colors">
+                      <a href={`tel:${dictionary.contact.info.phone.number?.replace(/\s+/g, '')}`} className="hover:text-blue-600 transition-colors" dir="ltr">
                         {dictionary.contact.info.phone.number}
                       </a>
                     </p>

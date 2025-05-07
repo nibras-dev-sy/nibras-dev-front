@@ -14,7 +14,7 @@ interface Testimonial {
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { lang } = await params
-  
+
   return {
     title: 'Home',
     description: 'Transforming your business with innovative digital solutions. Web development, mobile apps, and custom software to drive your growth.',
@@ -61,38 +61,38 @@ export default async function Home({
           <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
           <img className="absolute inset-0 w-full h-full object-cover opacity-10" src="949f8d8d60-74e9c390c262e1cf69a5.png" alt="abstract digital network lines and nodes, technology background with blue gradient overlay, minimalist tech pattern" />
         </div>
-        
+
         {/* Content */}
         <div className="container relative mx-auto px-4 z-10 py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="">
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              {dictionary.home.hero.title}
-            </h1>
-            <p className="text-blue-100 text-lg md:text-xl mt-16 mb-8 max-w-lg mx-auto md:mx-0">
-              {dictionary.home.hero.description}
-            </p>
-            <div className={`flex flex-wrap gap-4 mt-8`}>
-            <span href={`/${lang}/services`} className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
-            {dictionary.home.hero.services}
-              </span>
-              <span href={`/${lang}/contact-us`} className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
-              {dictionary.home.hero.contact}
-              </span>
+            <div className="">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                {dictionary.home.hero.title}
+              </h1>
+              <p className="text-blue-100 text-lg md:text-xl mt-16 mb-8 max-w-lg mx-auto md:mx-0">
+                {dictionary.home.hero.description}
+              </p>
+              <div className={`flex flex-wrap gap-4 mt-8`}>
+                <Link href={`/${lang}/services`} className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block">
+                  {dictionary.home.hero.services}
+                </Link>
+                <Link href={`/${lang}/contact-us`} className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block">
+                  {dictionary.home.hero.contact}
+                </Link>
               </div>
-          </div>
-          <div className="relative flex justify-center">
-            <div className="w-full h-80 md:h-96 lg:h-[450px] relative">
-            <div className="relative z-10 rounded-lg overflow-hidden">
-              <img className="w-full h-auto rounded-lg" src="digital-globe-network.png" alt="Digital globe with network connections and circuit patterns held in hands, representing global technology solutions" />
             </div>
-            <div className={`absolute -bottom-4 ${lang === 'ar' ? 'left-4' : 'right-4'} w-24 h-24 bg-blue-500 rounded-lg opacity-50 z-0`}></div>
-            <div className={`absolute -top-4 ${lang === 'ar' ? 'right-4' : 'left-4'} w-16 h-16 bg-indigo-600 rounded-lg opacity-50 z-0`}></div>
-          </div>
-          </div>
+            <div className="relative flex justify-center">
+              <div className="w-full h-80 md:h-96 lg:h-[450px] relative">
+                <div className="relative z-10 rounded-lg overflow-hidden">
+                  <img className="w-full h-auto rounded-lg" src="digital-globe-network.png" alt="Digital globe with network connections and circuit patterns held in hands, representing global technology solutions" />
+                </div>
+                <div className={`absolute -bottom-4 ${lang === 'ar' ? 'left-4' : 'right-4'} w-24 h-24 bg-blue-500 rounded-lg opacity-50 z-0`}></div>
+                <div className={`absolute -top-4 ${lang === 'ar' ? 'right-4' : 'left-4'} w-16 h-16 bg-indigo-600 rounded-lg opacity-50 z-0`}></div>
+              </div>
+            </div>
           </div>
         </div>
-        
+
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
           <i className="fa-solid fa-chevron-down"></i>
@@ -130,7 +130,7 @@ export default async function Home({
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{dictionary.home.services.title}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{dictionary.home.services.description}</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div id="service-card-1" className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
@@ -149,7 +149,7 @@ export default async function Home({
                 {dictionary.home.services.learnMore} <i className="fa-solid fa-arrow-right ml-2"></i>
               </span>
             </div>
-            
+
             <div id="service-card-2" className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <i className="fa-solid fa-shop text-2xl text-blue-600"></i>
@@ -168,7 +168,7 @@ export default async function Home({
               </span>
             </div>
           </div>
-          
+
           <div className="text-center mt-12">
             <span className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
               {dictionary.home.services.viewDetails}

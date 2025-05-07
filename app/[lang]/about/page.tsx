@@ -106,63 +106,6 @@ export default async function About({
           </div>
         </div>
       </section>
-
-      {/* Milestones Section */}
-      <section id="milestones-section" className="bg-gray-50 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-blue-100 rounded-md text-blue-700 font-medium mb-4">
-              {dictionary.about.milestones.badge}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              {dictionary.about.milestones.title}
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              {dictionary.about.milestones.description}
-            </p>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 hidden md:block"></div>
-            
-            {/* Timeline items */}
-            <div id="timeline-container" className="space-y-12 relative">
-              {dictionary.about.milestones.timeline.map((milestone: any, index: number) => (
-                <div key={index} className="flex flex-col md:flex-row items-center">
-                  {index % 2 === 0 ? (
-                    <>
-                      <div className={`md:w-1/2 md:pr-16 md:text-rightmb-8 md:mb-0`}>
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                          <h3 className="text-xl font-bold text-gray-800 mb-2">{milestone.year}</h3>
-                          <p className="text-gray-600">{milestone.description}</p>
-                        </div>
-                      </div>
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center z-10 mx-auto md:mx-0">
-                        <i className={`fa-solid ${milestone.icon} text-white`}></i>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16 hidden md:block"></div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="md:w-1/2 md:pr-16 hidden md:block"></div>
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center z-10 mx-auto md:mx-0">
-                        <i className={`fa-solid ${milestone.icon} text-white`}></i>
-                      </div>
-                      <div className={`md:w-1/2 md:pl-16 md:text-left mb-8 md:mb-0`}>
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                          <h3 className="text-xl font-bold text-gray-800 mb-2">{milestone.year}</h3>
-                          <p className="text-gray-600">{milestone.description}</p>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 } 

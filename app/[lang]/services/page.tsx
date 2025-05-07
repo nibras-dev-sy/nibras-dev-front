@@ -329,9 +329,6 @@ export default async function Services({
             {dictionary.home.callToAction.description}
           </p>
           <div className={`flex flex-col sm:flex-row justify-center gap-4`}>
-            <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 cursor-pointer">
-              {dictionary.home.callToAction.button}
-            </span>
             <span className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 cursor-pointer">
               {dictionary.navigation.contact}
             </span>
