@@ -113,6 +113,10 @@ export default function Footer({
                 <span dir="ltr">{dictionary.footer.phone}</span>
               </li>
               <li className={`flex items-start gap-3`}>
+                <i className={`fas fa-phone mt-1.5 ${isRTL ? "ml-3" : "mr-3"} text-blue-500`}></i>
+                <span dir="ltr">{dictionary.footer.phone1}</span>
+              </li>
+              <li className={`flex items-start gap-3`}>
                 <i className={`fas fa-envelope mt-1.5 ${isRTL ? "ml-3" : "mr-3"} text-blue-500`}></i>
                 <span>{dictionary.footer.email}</span>
               </li>

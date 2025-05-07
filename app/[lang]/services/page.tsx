@@ -1,19 +1,4 @@
 import { getDictionary } from "@/lib/dictionary"
-import type { Locale } from "@/lib/i18n-config"
-import Image from "next/image"
-
-interface ServiceFeature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface WebsiteType {
-  icon: string;
-  title: string;
-  description: string;
-  features: string[];
-}
 
 interface Platform {
   icon: string;
@@ -23,13 +8,6 @@ interface Platform {
 
 interface ProcessStep {
   number: string;
-  title: string;
-  description: string;
-}
-
-interface CaseStudy {
-  image: string;
-  category: string;
   title: string;
   description: string;
 }
@@ -54,7 +32,7 @@ export default async function Services({
             <p className="text-blue-100 text-xl mb-8 max-w-2xl">
               {dictionary.services.hero.description}
             </p>
-            <div className={`flex flex-col sm:flex-row gap-4`}>
+            <div className={`flex gap-4`}>
               <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
                 {dictionary.services.hero.business}
               </span>
