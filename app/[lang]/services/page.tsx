@@ -17,6 +17,36 @@ interface ProcessStep {
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const dictionary = await getDictionary(params.lang as Locale)
   
+  // Arabic metadata
+  if (params.lang === 'ar') {
+    return {
+      title: 'خدماتنا',
+      description: 'خدمات شاملة لتطوير الويب والجوال تشمل مواقع الأعمال، وحلول التجارة الإلكترونية، وتطوير البرمجيات المخصصة وتصميم واجهة المستخدم.',
+      keywords: ['خدمات تطوير الويب', 'تطوير تطبيقات الجوال', 'حلول التجارة الإلكترونية', 'مواقع الأعمال', 'برمجيات مخصصة', 'تصميم واجهة المستخدم'],
+      alternates: {
+        canonical: `/${params.lang}/services`,
+        languages: {
+          'en': '/en/services',
+          'ar': '/ar/services',
+        },
+      },
+      openGraph: {
+        title: `خدمات تطوير الويب والجوال | نبراس ديف`,
+        description: 'استكشف خدمات التطوير الشاملة لنمو الأعمال. من المواقع إلى منصات التجارة الإلكترونية والتطبيقات المخصصة.',
+        url: `https://nibrasdev.com/${params.lang}/services`,
+        images: [
+          {
+            url: '/og-services.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'خدمات نبراس ديف',
+          },
+        ],
+      },
+    }
+  }
+  
+  // English metadata
   return {
     title: 'Our Services',
     description: 'Comprehensive web and mobile development services including business websites, e-commerce solutions, custom software development and UI/UX design.',

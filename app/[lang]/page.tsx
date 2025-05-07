@@ -16,6 +16,37 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   const { lang } = await params
   const dictionary = await getDictionary(lang as Locale)
   
+  // Arabic metadata
+  if (lang === 'ar') {
+    return {
+      title: 'تطوير الويب والتطبيقات الاحترافية',
+      description: 'تحويل أفكار الأعمال إلى واقع رقمي مع تطوير ويب متطور، وتطبيقات جوالة، وحلول برمجية مخصصة مصممة للنمو.',
+      keywords: ['تطوير الويب', 'تطوير تطبيقات الجوال', 'برمجيات مخصصة', 'تصميم متجاوب', 'تصميم واجهة المستخدم', 'مواقع الأعمال', 'حلول التجارة الإلكترونية', 'التحول الرقمي'],
+      alternates: {
+        canonical: `/${lang}`,
+        languages: {
+          'en': '/en',
+          'ar': '/ar',
+        },
+      },
+      openGraph: {
+        title: "نبراس ديف | حول أعمالك مع الحلول الرقمية",
+        description: "خدمات تطوير ويب وجوال احترافية تدفع نمو الأعمال من خلال التصميم المبتكر والأداء الاستثنائي.",
+        url: `https://nibrasdev.com/${lang}`,
+        images: [
+          {
+            url: '/og-home.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'نبراس ديف - تطوير الويب والجوال',
+          },
+        ],
+        type: 'website',
+      },
+    }
+  }
+  
+  // English metadata
   return {
     title: 'Professional Web & Mobile Development',
     description: 'Transforming business ideas into digital reality with cutting-edge web development, mobile applications, and custom software solutions designed for growth.',

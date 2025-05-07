@@ -5,6 +5,36 @@ import type { Metadata } from 'next'
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const dictionary = await getDictionary(params.lang as Locale)
   
+  // Arabic metadata
+  if (params.lang === 'ar') {
+    return {
+      title: dictionary.contact.hero.title,
+      description: 'تواصل مع فريق التطوير لدينا للحصول على حلول ويب وجوال احترافية. نقدم استشارات مجانية لمناقشة احتياجات وأهداف مشروعك.',
+      keywords: ['اتصل بنبراس ديف', 'توظيف مطور ويب', 'استشارة تطوير البرمجيات', 'الحصول على عرض سعر', 'استفسار المشروع', 'خدمات تطوير الويب'],
+      alternates: {
+        canonical: `/${params.lang}/contact`,
+        languages: {
+          'en': '/en/contact',
+          'ar': '/ar/contact',
+        },
+      },
+      openGraph: {
+        title: `${dictionary.contact.hero.title} | نبراس ديف`,
+        description: 'تواصل مع فريق الخبراء لدينا لمشروعك الرقمي التالي. نحن هنا للمساعدة في تحويل أفكارك إلى واقع.',
+        url: `https://nibrasdev.com/${params.lang}/contact`,
+        images: [
+          {
+            url: '/og-contact.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'اتصل بنبراس ديف',
+          },
+        ],
+      },
+    }
+  }
+  
+  // English metadata
   return {
     title: dictionary.contact.hero.title,
     description: 'Get in touch with our development team for professional web and mobile solutions. We offer free consultations to discuss your project needs and goals.',
