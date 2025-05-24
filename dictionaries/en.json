@@ -196,20 +196,20 @@
       "cta": "Start Your E-Commerce Project"
     },
     "platforms": {
-      "title": "E-Commerce Platforms We Work With",
+      "title": "Platforms We Work With",
       "description": "We leverage leading e-commerce platforms to build scalable and feature-rich online stores.",
       "platforms": [
         {
-          "title": "Shopify",
-          "description": "Powerful and user-friendly platform ideal for businesses of all sizes, with extensive app ecosystem and excellent scalability."
+          "title": "MedusaJS",
+          "description": "Open-source headless commerce platform that provides complete control over your e-commerce stack with modern architecture and extensive customization capabilities."
         },
         {
-          "title": "WooCommerce",
-          "description": "Flexible WordPress-based solution offering complete customization control and extensive plugin options."
+          "title": "Odoo",
+          "description": "Comprehensive business management platform with integrated e-commerce capabilities, offering seamless ERP, CRM, and inventory management solutions."
         },
         {
-          "title": "Magento",
-          "description": "Enterprise-grade platform with advanced features for large catalogs and complex business requirements."
+          "title": "AWS",
+          "description": "Enterprise-grade cloud infrastructure that enables scalable, secure, and high-performance e-commerce solutions with extensive service integration options."
         }
       ],
       "featuresTitle": "E-Commerce Features We Implement",

@@ -86,50 +86,50 @@ export default async function Home({
   return (
     <>
       {/* Hero Section */}
-      <section id="hero" className="h-[700px] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(25,49,94,0.4)_1px,transparent_1px)] bg-[length:20px_20px]"></div>
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-          <img className="absolute inset-0 w-full h-full object-cover opacity-10" src="949f8d8d60-74e9c390c262e1cf69a5.png" alt="abstract digital network lines and nodes, technology background with blue gradient overlay, minimalist tech pattern" />
+      <section id="hero" className="relative flex items-center justify-center min-h-[700px] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+        {/* Animated SVG/Tech Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <svg className="w-full h-full" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="techGradient" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#2563eb" />
+                <stop offset="1" stopColor="#6366f1" />
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="700" fill="url(#techGradient)" opacity="0.2" />
+            <g opacity="0.3">
+              <circle cx="300" cy="200" r="120" fill="#38bdf8" />
+              <circle cx="1000" cy="600" r="180" fill="#818cf8" />
+              <circle cx="900" cy="100" r="80" fill="#0ea5e9" />
+            </g>
+            <g stroke="#fff" strokeWidth="1.5" opacity="0.12">
+              <path d="M0 350h1200" />
+              <path d="M600 0v700" />
+              <path d="M200 0l800 700" />
+              <path d="M1000 0L200 700" />
+            </g>
+          </svg>
         </div>
-
         {/* Content */}
-        <div className="container relative mx-auto px-4 z-10 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="">
-              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                {dictionary.home.hero.title}
-              </h1>
-              <p className="text-blue-100 text-lg md:text-xl mt-16 mb-8 max-w-lg mx-auto md:mx-0">
-                {dictionary.home.hero.description}
-              </p>
-              <div className={`flex flex-wrap gap-4 mt-8`}>
-                <Link href={`/${lang}/services`} className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block">
-                  {dictionary.home.hero.services}
-                </Link>
-                <Link href={`/${lang}/contact-us`} className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block">
-                  {dictionary.home.hero.contact}
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex justify-center">
-              <div className="w-full h-80 md:h-96 lg:h-[450px] relative">
-                <div className="relative z-10 rounded-lg overflow-hidden">
-                  <img className="w-full h-auto rounded-lg" src="digital-globe-network.png" alt="Digital globe with network connections and circuit patterns held in hands, representing global technology solutions" />
-                </div>
-                <div className={`absolute -bottom-4 ${lang === 'ar' ? 'left-4' : 'right-4'} w-24 h-24 bg-blue-500 rounded-lg opacity-50 z-0`}></div>
-                <div className={`absolute -top-4 ${lang === 'ar' ? 'right-4' : 'left-4'} w-16 h-16 bg-indigo-600 rounded-lg opacity-50 z-0`}></div>
-              </div>
-            </div>
+        <div className="container relative z-10 mx-auto px-4 py-24 flex flex-col items-center text-center">
+          <h1 className="text-white text-4xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-lg">
+            {dictionary.home.hero.title}
+          </h1>
+          <p className="text-blue-100 text-lg md:text-2xl max-w-2xl mb-10">
+            {dictionary.home.hero.description}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href={`/${lang}/services`} className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
+              {dictionary.home.hero.services}
+            </Link>
+            <Link href={`/${lang}/contact`} className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold shadow hover:from-blue-700 hover:to-indigo-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
+              {dictionary.home.hero.contact}
+            </Link>
           </div>
         </div>
-
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <i className="fa-solid fa-chevron-down"></i>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-10">
+          <i className="fa-solid fa-chevron-down text-2xl"></i>
         </div>
       </section>
 

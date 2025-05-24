@@ -95,12 +95,18 @@ export default async function Services({
               {dictionary.services.hero.description}
             </p>
             <div className={`flex gap-4`}>
-              <span className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
+              <a 
+                href="#business-websites" 
+                className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block"
+              >
                 {dictionary.services.hero.business}
-              </span>
-              <span className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
+              </a>
+              <a 
+                href="#ecommerce-platforms" 
+                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block"
+              >
                 {dictionary.services.hero.ecommerce}
-              </span>
+              </a>
             </div>
           </div>
         </div>
@@ -303,20 +309,21 @@ export default async function Services({
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               {dictionary.services.platforms.title}
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {dictionary.services.platforms.description}
-            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {dictionary.services.platforms.platforms.map((platform: Platform, index: number) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center">
                 <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-                  <i className={`${
-                    index === 0 ? "fa-brands fa-shopify text-green-600" :
-                    index === 1 ? "fa-brands fa-wordpress text-blue-600" :
-                    "fa-solid fa-cart-shopping text-purple-600"
-                  } text-4xl`}></i>
+                  <img 
+                    src={`/logos/${
+                      index === 0 ? "medusajs" :
+                      index === 1 ? "odoo" :
+                      "aws"
+                    }.png`}
+                    alt={`${platform.title} logo`}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">{platform.title}</h3>
                 <p className="text-gray-600 mb-6">{platform.description}</p>
