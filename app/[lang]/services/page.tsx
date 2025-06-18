@@ -44,7 +44,7 @@ export default async function Services({
   return (
     <>
       {/* Services Hero Section */}
-      <section id="services-hero" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
+      {/*<section id="services-hero" className="bg-gradient-to-r from-blue-700 to-blue-900 pt-40 pb-20 px-6">
         <div className="container mx-auto">
           <div className={`max-w-3xl`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
@@ -55,10 +55,10 @@ export default async function Services({
             </p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Provided Enterprise Technologies */}
-      <section id="enterprise-technologies" className="bg-white py-20 px-6">
+      <section id="enterprise-technologies" className="bg-white mt-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -103,7 +103,7 @@ export default async function Services({
       </section>
 
       {/* E-Commerce Platforms */}
-      <section id="ecommerce-platforms" className="bg-white py-20 px-6">
+      <section id="ecommerce-platforms" className="bg-gray-100 py-16 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

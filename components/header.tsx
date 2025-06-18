@@ -20,7 +20,7 @@ export default function Header({
   const pathname = usePathname()
   
   // Check if we're on home or services page
-  const isTransparentHeader = pathname === `/${lang}` || pathname === `/${lang}/services`
+  const isTransparentHeader = pathname === `/${lang}`
 
   useEffect(() => {
     const handleScroll = () => {
