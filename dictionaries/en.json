@@ -200,16 +200,16 @@
       "description": "We leverage leading e-commerce platforms to build scalable and feature-rich online stores.",
       "platforms": [
         {
-          "title": "MedusaJS",
-          "description": "Open-source headless commerce platform that provides complete control over your e-commerce stack with modern architecture and extensive customization capabilities."
+          "title": "Odoo"
         },
         {
-          "title": "Odoo",
-          "description": "Comprehensive business management platform with integrated e-commerce capabilities, offering seamless ERP, CRM, and inventory management solutions."
+          "title": "AWS"
         },
         {
-          "title": "AWS",
-          "description": "Enterprise-grade cloud infrastructure that enables scalable, secure, and high-performance e-commerce solutions with extensive service integration options."
+          "title": "Azure"
+        },
+        {
+          "title": "Dahua"
         }
       ],
       "featuresTitle": "E-Commerce Features We Implement",
@@ -247,6 +247,92 @@
           "number": "4",
           "title": "Launch & Support",
           "description": "We deploy your solution and provide ongoing support and maintenance to ensure optimal performance."
+        }
+      ]
+    },
+    "enterpriseTechnologies": {
+      "title": "Provided Enterprise Technologies",
+      "description": "Explore our specialized enterprise technology solutions designed for various industries and business needs.",
+      "items": [
+        {
+          "title": "ERP Systems (Odoo)",
+          "details": [
+            "Comprehensive business management",
+            "Modular and scalable",
+            "Integration with accounting, HR, sales, and more"
+          ]
+        },
+        {
+          "title": "Restaurants POS with IT Infrastructure",
+          "details": [
+            "Point of Sale tailored for restaurants",
+            "Hardware and network setup",
+            "Inventory and order management"
+          ]
+        },
+        {
+          "title": "Shops & Supermarkets POS with IT Infrastructure",
+          "details": [
+            "Retail-focused POS systems",
+            "Barcode and inventory integration",
+            "Complete IT infrastructure deployment"
+          ]
+        },
+        {
+          "title": "Fleet Management System with Rental management",
+          "details": [
+            "Vehicle tracking and telematics",
+            "Rental and contract management",
+            "Maintenance scheduling"
+          ]
+        },
+        {
+          "title": "Manufacturing management with IoT",
+          "details": [
+            "Production line monitoring",
+            "IoT device integration",
+            "Real-time analytics"
+          ]
+        },
+        {
+          "title": "Inventories, with sales",
+          "details": [
+            "Stock and warehouse management",
+            "Sales and invoicing integration",
+            "Reporting and analytics"
+          ]
+        },
+        {
+          "title": "Learning, schools and institutes systems",
+          "details": [
+            "Teacher and student management",
+            "HR, lectures, and courses",
+            "Online e-learning implementation"
+          ]
+        },
+        {
+          "title": "Security camera installation and online monitoring",
+          "details": [
+            "CCTV setup and configuration",
+            "Network and remote access",
+            "Live online monitoring"
+          ]
+        },
+        {
+          "title": "Networks implementation for offices and companies",
+          "details": [
+            "Wired and wireless network setup",
+            "Office and enterprise solutions",
+            "Maintenance and support"
+          ]
+        },
+        {
+          "title": "Cloud services, hosting, and storage",
+          "details": [
+            "Cloud infrastructure deployment",
+            "Web hosting and backups",
+            "Secure data storage"
+          ]
         }
       ]
     }
