@@ -18,7 +18,7 @@ export default function Footer({
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 ${isRTL ? "text-right" : "text-left"}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 ${isRTL ? "text-right" : "text-left"}`}>
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
@@ -37,9 +37,6 @@ export default function Footer({
             <div className={`flex space-x-4`}>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <i className="fab fa-twitter"></i>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <i className="fab fa-linkedin-in"></i>
@@ -65,40 +62,8 @@ export default function Footer({
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/about`} className="text-gray-400 hover:text-white transition-colors duration-300">
-                  {dictionary.navigation.about}
-                </Link>
-              </li>
-              <li>
                 <Link href={`/${lang}/contact`} className="text-gray-400 hover:text-white transition-colors duration-300">
                   {dictionary.navigation.contact}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">{dictionary.footer.services}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href={`/${lang}/services#web-development`} className="text-gray-400 hover:text-white transition-colors duration-300">
-                  {dictionary.footer.webDev}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services#mobile-development`} className="text-gray-400 hover:text-white transition-colors duration-300">
-                  {dictionary.footer.mobileDev}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services#ui-ux-design`} className="text-gray-400 hover:text-white transition-colors duration-300">
-                  {dictionary.footer.uiUx}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services#cloud-services`} className="text-gray-400 hover:text-white transition-colors duration-300">
-                  {dictionary.footer.cloud}
                 </Link>
               </li>
             </ul>
@@ -128,7 +93,7 @@ export default function Footer({
         <div className="border-t border-gray-800 pt-8">
           <div className={`flex flex-col md:flex-row justify-between items-center`}>
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Nibras Dev. {dictionary.footer.rights}
+              © {currentYear} Nibras Enterprise Technologies. {dictionary.footer.rights}
             </p>
             <div className={`flex space-x-4`}>
               <Link href={`/${lang}/privacy`} className="text-gray-400 hover:text-white text-sm transition-colors duration-300">

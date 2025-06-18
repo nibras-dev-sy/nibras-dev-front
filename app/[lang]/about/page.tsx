@@ -3,66 +3,6 @@ import type { Locale } from "@/lib/i18n-config"
 import Image from "next/image"
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang as Locale)
-  
-  // Arabic metadata
-  if (params.lang === 'ar') {
-    return {
-      title: 'من نحن',
-      description: 'تعرف على نبراس ديف - قصتنا، ومهمتنا، وقيمنا، والفريق وراء خدمات تطوير الويب والجوال لدينا.',
-      keywords: ['عن نبراس ديف', 'فريق تطوير الويب', 'شركة برمجيات', 'وكالة تطوير', 'مهمتنا', 'قيمنا'],
-      alternates: {
-        canonical: `/${params.lang}/about`,
-        languages: {
-          'en': '/en/about',
-          'ar': '/ar/about',
-        },
-      },
-      openGraph: {
-        title: `عن نبراس ديف | فريق تطوير الويب والجوال`,
-        description: 'تعرف على الفريق وراء نبراس ديف واعرف المزيد عن مهمتنا لتقديم حلول رقمية استثنائية.',
-        url: `https://nibrasdev.com/${params.lang}/about`,
-        images: [
-          {
-            url: '/og-about.jpg',
-            width: 1200,
-            height: 630,
-            alt: 'فريق نبراس ديف',
-          },
-        ],
-      },
-    }
-  }
-  
-  // English metadata
-  return {
-    title: 'About Us',
-    description: 'Learn about Nibras Dev - our story, mission, values, and the team behind our web and mobile development services.',
-    keywords: ['about nibras dev', 'web development team', 'software company', 'development agency', 'our mission', 'our values'],
-    alternates: {
-      canonical: `/${params.lang}/about`,
-      languages: {
-        'en': '/en/about',
-        'ar': '/ar/about',
-      },
-    },
-    openGraph: {
-      title: `About Nibras Dev | Web & Mobile Development Team`,
-      description: 'Meet the team behind Nibras Dev and learn about our mission to deliver exceptional digital solutions.',
-      url: `https://nibrasdev.com/${params.lang}/about`,
-      images: [
-        {
-          url: '/og-about.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Nibras Dev Team',
-        },
-      ],
-    },
-  }
-}
-
 export default async function About({
   params,
 }: {

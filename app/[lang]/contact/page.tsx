@@ -2,64 +2,22 @@ import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/lib/i18n-config"
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang as Locale)
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { lang } = await params
+  const dictionary = await getDictionary(lang as Locale)
   
   // Arabic metadata
-  if (params.lang === 'ar') {
+  if (lang === 'ar') {
     return {
-      title: dictionary.contact.hero.title,
-      description: 'تواصل مع فريق التطوير لدينا للحصول على حلول ويب وجوال احترافية. نقدم استشارات مجانية لمناقشة احتياجات وأهداف مشروعك.',
-      keywords: ['اتصل بنبراس ديف', 'توظيف مطور ويب', 'استشارة تطوير البرمجيات', 'الحصول على عرض سعر', 'استفسار المشروع', 'خدمات تطوير الويب'],
-      alternates: {
-        canonical: `/${params.lang}/contact`,
-        languages: {
-          'en': '/en/contact',
-          'ar': '/ar/contact',
-        },
-      },
-      openGraph: {
-        title: `${dictionary.contact.hero.title} | نبراس ديف`,
-        description: 'تواصل مع فريق الخبراء لدينا لمشروعك الرقمي التالي. نحن هنا للمساعدة في تحويل أفكارك إلى واقع.',
-        url: `https://nibrasdev.com/${params.lang}/contact`,
-        images: [
-          {
-            url: '/og-contact.jpg',
-            width: 1200,
-            height: 630,
-            alt: 'اتصل بنبراس ديف',
-          },
-        ],
-      },
+      title: 'نبراس لتكنولوجيا الأعمال - اتصل بنا',
+      description: 'نبني حلول برمجية مبتكرة تدفع نمو الأعمال وتقدم تجربة مستخدم استثنائية من أنظمة ERP وCRM والتطبيقات المتكاملة إلى تنفيذ البنية التحتية الرقمية للشركات.',
     }
   }
   
-  
   // English metadata
   return {
-    title: dictionary.contact.hero.title,
-    description: 'Get in touch with our development team for professional web and mobile solutions. We offer free consultations to discuss your project needs and goals.',
-    keywords: ['contact nibras dev', 'hire web developer', 'software development consultation', 'get a quote', 'project inquiry', 'web development services'],
-    alternates: {
-      canonical: `/${params.lang}/contact`,
-      languages: {
-        'en': '/en/contact',
-        'ar': '/ar/contact',
-      },
-    },
-    openGraph: {
-      title: `${dictionary.contact.hero.title} | Nibras Dev`,
-      description: 'Reach out to our team of experts for your next digital project. We\'re here to help transform your ideas into reality.',
-      url: `https://nibrasdev.com/${params.lang}/contact`,
-      images: [
-        {
-          url: '/og-contact.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Contact Nibras Dev',
-        },
-      ],
-    },
+    title: 'Nibras Enterprise Technologies - Contact Us',
+    description: 'We build innovative software solutions that drive business growth and deliver exceptional user experiences from ERP and CRM systems to integrated applications to implementing the digital infrastructure of companies.',
   }
 }
 
@@ -99,19 +57,6 @@ export default async function Contact({
               <div className="mb-6">
                 <label htmlFor="phone" className="block text-gray-700 mb-2 font-medium">{dictionary.contact.form.phone.label}</label>
                 <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder={dictionary.contact.form.phone.placeholder} />
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="service" className="block text-gray-700 mb-2 font-medium">{dictionary.contact.form.service.label}</label>
-                <select id="service" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="" selected disabled>{dictionary.contact.form.service.placeholder}</option>
-                  <option value="web">{dictionary.contact.form.service.options.web}</option>
-                  <option value="mobile">{dictionary.contact.form.service.options.mobile}</option>
-                  <option value="cloud">{dictionary.contact.form.service.options.cloud}</option>
-                  <option value="database">{dictionary.contact.form.service.options.database}</option>
-                  <option value="devops">{dictionary.contact.form.service.options.devops}</option>
-                  <option value="security">{dictionary.contact.form.service.options.security}</option>
-                </select>
               </div>
               
               <div className="mb-6">
@@ -157,6 +102,18 @@ export default async function Contact({
                     </p>
                   </div>
                 </div>
+                
+                <div id="address-info" className={`flex items-start gap-3`}>
+                  <div className={`w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 ${lang === "ar" ? "ml-4" : "mr-4"}`}>
+                    <i className="fa-solid fa-location-dot text-blue-600 text-xl" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2 text-lg">{dictionary.contact.info.location.title}</h3>
+                    <p className="text-gray-600 text-lg">
+                      {dictionary.contact.info.location.address}
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div id="social-connect" className={`mt-10`}>
@@ -164,9 +121,6 @@ export default async function Contact({
                 <div className={`flex space-x-4`} aria-label="Social Media Links">
                   <a href="https://www.linkedin.com/company/nibrasdev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" aria-label="LinkedIn">
                     <i className="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i>
-                  </a>
-                  <a href="https://twitter.com/nibrasdev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" aria-label="Twitter">
-                    <i className="fa-brands fa-twitter text-lg" aria-hidden="true"></i>
                   </a>
                   <a href="https://www.facebook.com/nibrasdev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" aria-label="Facebook">
                     <i className="fa-brands fa-facebook-f text-lg" aria-hidden="true"></i>

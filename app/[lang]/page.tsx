@@ -19,59 +19,15 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   // Arabic metadata
   if (lang === 'ar') {
     return {
-      title: 'تطوير الويب والتطبيقات الاحترافية',
-      description: 'تحويل أفكار الأعمال إلى واقع رقمي مع تطوير ويب متطور، وتطبيقات جوالة، وحلول برمجية مخصصة مصممة للنمو.',
-      keywords: ['تطوير الويب', 'تطوير تطبيقات الجوال', 'برمجيات مخصصة', 'تصميم متجاوب', 'تصميم واجهة المستخدم', 'مواقع الأعمال', 'حلول التجارة الإلكترونية', 'التحول الرقمي'],
-      alternates: {
-        canonical: `/${lang}`,
-        languages: {
-          'en': '/en',
-          'ar': '/ar',
-        },
-      },
-      openGraph: {
-        title: "نبراس ديف | حول أعمالك مع الحلول الرقمية",
-        description: "خدمات تطوير ويب وجوال احترافية تدفع نمو الأعمال من خلال التصميم المبتكر والأداء الاستثنائي.",
-        url: `https://nibrasdev.com/${lang}`,
-        images: [
-          {
-            url: '/og-home.jpg',
-            width: 1200,
-            height: 630,
-            alt: 'نبراس ديف - تطوير الويب والجوال',
-          },
-        ],
-        type: 'website',
-      },
+      title: 'نبراس لتكنولوجيا الأعمال',
+      description: 'نبني حلول برمجية مبتكرة تدفع نمو الأعمال وتقدم تجربة مستخدم استثنائية من أنظمة ERP وCRM والتطبيقات المتكاملة إلى تنفيذ البنية التحتية الرقمية للشركات.',
     }
   }
   
   // English metadata
   return {
-    title: 'Professional Web & Mobile Development',
-    description: 'Transforming business ideas into digital reality with cutting-edge web development, mobile applications, and custom software solutions designed for growth.',
-    keywords: ['web development', 'mobile app development', 'custom software', 'responsive design', 'UI/UX design', 'business websites', 'e-commerce solutions', 'digital transformation'],
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        'en': '/en',
-        'ar': '/ar',
-      },
-    },
-    openGraph: {
-      title: "Nibras Dev | Transform Your Business with Digital Solutions",
-      description: "Professional web and mobile development services that drive business growth through innovative design and exceptional performance.",
-      url: `https://nibrasdev.com/${lang}`,
-      images: [
-        {
-          url: '/og-home.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Nibras Dev - Web & Mobile Development',
-        },
-      ],
-      type: 'website',
-    },
+    title: 'Nibras Enterprise Technologies',
+    description: 'We build innovative software solutions that drive business growth and deliver exceptional user experiences from ERP and CRM systems to integrated applications to implementing the digital infrastructure of companies.',
   }
 }
 
@@ -115,7 +71,7 @@ export default async function Home({
           <h1 className="text-white text-4xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-lg">
             {dictionary.home.hero.title}
           </h1>
-          <p className="text-blue-100 text-lg md:text-2xl max-w-2xl mb-10">
+          <p className="text-blue-100 text-lg md:text-2xl max-w-2xl mb-10 mt-10">
             {dictionary.home.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -130,30 +86,6 @@ export default async function Home({
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-10">
           <i className="fa-solid fa-chevron-down text-2xl"></i>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section id="stats-section" className="bg-white py-16 px-6">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div id="stat-1" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">3+</div>
-              <div className="text-gray-600">{dictionary.home.stats.experience}</div>
-            </div>
-            <div id="stat-2" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">5+</div>
-              <div className="text-gray-600">{dictionary.home.stats.projects}</div>
-            </div>
-            <div id="stat-3" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">10+</div>
-              <div className="text-gray-600">{dictionary.home.stats.team}</div>
-            </div>
-            <div id="stat-4" className="text-center">
-              <div className="text-blue-600 text-4xl font-bold mb-2">98%</div>
-              <div className="text-gray-600">{dictionary.home.stats.satisfaction}</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -204,35 +136,39 @@ export default async function Home({
           </div>
 
           <div className="text-center mt-12">
-            <span className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
+            <a href={`/${lang}/services`} className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
               {dictionary.home.services.viewDetails}
-            </span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section id="about-section" className="bg-white py-20 px-6">
+      
+      {/* Development Process */}
+      <section id="development-process" className="bg-blue-700 py-20 px-6">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0">
-              <img className="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3a8ca0f87d-d384dfbf48cdd1ea06dc.png" alt="modern tech office" />
-            </div>
-            <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">{dictionary.home.about.title}</h2>
-              <p className="text-gray-600 mb-6">{dictionary.home.about.description1}</p>
-              <p className="text-gray-600 mb-8">{dictionary.home.about.description2}</p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                {dictionary.home.about.tags.map((tag: string, index: number) => (
-                  <div key={index} className="bg-blue-50 px-4 py-2 rounded-md">
-                    <span className="text-blue-600 font-medium">{tag}</span>
-                  </div>
-                ))}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {dictionary.services.process.title}
+            </h2>
+            <p className="text-blue-100 max-w-2xl mx-auto">
+              {dictionary.services.process.description}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {dictionary.services.process.steps.map((step: any, index: number) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
+                  <span className="text-blue-700 font-bold text-xl">{step.number}</span>
+                  {index < 3 && (
+                    <div className="absolute h-1 bg-blue-100 w-full right-0 top-1/2 transform translate-x-full -z-10 hidden lg:block"></div>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
               </div>
-              <span className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
-                {dictionary.home.about.learnMore}
-              </span>
-            </div>
+            ))}
           </div>
         </div>
       </section>

@@ -14,63 +14,22 @@ interface ProcessStep {
   description: string;
 }
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang as Locale)
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { lang } = await params
+  const dictionary = await getDictionary(lang as Locale)
   
   // Arabic metadata
-  if (params.lang === 'ar') {
+  if (lang === 'ar') {
     return {
-      title: 'خدماتنا',
-      description: 'خدمات شاملة لتطوير الويب والجوال تشمل مواقع الأعمال، وحلول التجارة الإلكترونية، وتطوير البرمجيات المخصصة وتصميم واجهة المستخدم.',
-      keywords: ['خدمات تطوير الويب', 'تطوير تطبيقات الجوال', 'حلول التجارة الإلكترونية', 'مواقع الأعمال', 'برمجيات مخصصة', 'تصميم واجهة المستخدم'],
-      alternates: {
-        canonical: `/${params.lang}/services`,
-        languages: {
-          'en': '/en/services',
-          'ar': '/ar/services',
-        },
-      },
-      openGraph: {
-        title: `خدمات تطوير الويب والجوال | نبراس ديف`,
-        description: 'استكشف خدمات التطوير الشاملة لنمو الأعمال. من المواقع إلى منصات التجارة الإلكترونية والتطبيقات المخصصة.',
-        url: `https://nibrasdev.com/${params.lang}/services`,
-        images: [
-          {
-            url: '/og-services.jpg',
-            width: 1200,
-            height: 630,
-            alt: 'خدمات نبراس ديف',
-          },
-        ],
-      },
+      title: 'نبراس لتكنولوجيا الأعمال - خدماتنا',
+      description: 'نبني حلول برمجية مبتكرة تدفع نمو الأعمال وتقدم تجربة مستخدم استثنائية من أنظمة ERP وCRM والتطبيقات المتكاملة إلى تنفيذ البنية التحتية الرقمية للشركات.',
     }
   }
   
   // English metadata
   return {
-    title: 'Our Services',
-    description: 'Comprehensive web and mobile development services including business websites, e-commerce solutions, custom software development and UI/UX design.',
-    keywords: ['web development services', 'mobile app development', 'e-commerce solutions', 'business websites', 'custom software', 'UI/UX design'],
-    alternates: {
-      canonical: `/${params.lang}/services`,
-      languages: {
-        'en': '/en/services',
-        'ar': '/ar/services',
-      },
-    },
-    openGraph: {
-      title: `Web & Mobile Development Services | Nibras Dev`,
-      description: 'Explore our comprehensive development services for business growth. From websites to e-commerce platforms and custom applications.',
-      url: `https://nibrasdev.com/${params.lang}/services`,
-      images: [
-        {
-          url: '/og-services.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Nibras Dev Services',
-        },
-      ],
-    },
+    title: 'Nibras Enterprise Technologies - Our Services',
+    description: 'We build innovative software solutions that drive business growth and deliver exceptional user experiences from ERP and CRM systems to integrated applications to implementing the digital infrastructure of companies.',
   }
 }
 
@@ -94,113 +53,6 @@ export default async function Services({
             <p className="text-blue-100 text-xl mb-8 max-w-2xl">
               {dictionary.services.hero.description}
             </p>
-            <div className={`flex gap-4`}>
-              <a 
-                href="#business-websites" 
-                className="bg-white text-blue-700 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block"
-              >
-                {dictionary.services.hero.business}
-              </a>
-              <a 
-                href="#ecommerce-platforms" 
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap inline-block"
-              >
-                {dictionary.services.hero.ecommerce}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview Section */}
-      <section id="services-overview" className="bg-white py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              {dictionary.services.overview.title}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {dictionary.services.overview.description}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div id="service-overview-1" className="bg-blue-50 p-8 rounded-lg transition-all duration-300 hover:shadow-lg">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="fa-solid fa-code text-3xl text-blue-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{dictionary.services.overview.custom.title}</h3>
-              <p className="text-gray-600">{dictionary.services.overview.custom.description}</p>
-            </div>
-            
-            <div id="service-overview-2" className="bg-blue-50 p-8 rounded-lg transition-all duration-300 hover:shadow-lg">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="fa-solid fa-paintbrush text-3xl text-blue-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{dictionary.services.overview.uiux.title}</h3>
-              <p className="text-gray-600">{dictionary.services.overview.uiux.description}</p>
-            </div>
-            
-            <div id="service-overview-3" className="bg-blue-50 p-8 rounded-lg transition-all duration-300 hover:shadow-lg">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="fa-solid fa-gauge-high text-3xl text-blue-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{dictionary.services.overview.performance.title}</h3>
-              <p className="text-gray-600">{dictionary.services.overview.performance.description}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Websites Section */}
-      <section id="business-websites" className="bg-gray-50 py-20 px-6">
-        <div className="container mx-auto">
-          <div className={`flex flex-col lg:flex-row items-center gap-12`}>
-            <div className={`lg:w-1/2 order-2 lg:order-1`}>
-              <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">
-                {dictionary.services.business.badge}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4 mb-6">
-                {dictionary.services.business.title}
-              </h2>
-              <p className="text-gray-600 mb-6">
-                {dictionary.services.business.description}
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                {dictionary.services.business.features.map((feature: any, index: number) => (
-                  <div key={index} className={`flex items-start`}>
-                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1`}>
-                      <i className={`fa-solid ${index === 0 ? "fa-mobile-screen" : 
-                                              index === 1 ? "fa-magnifying-glass" :
-                                              index === 2 ? "fa-gauge-high" : "fa-lock"} text-blue-600`}></i>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-1">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <span className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 inline-block cursor-pointer">
-                {dictionary.services.business.cta}
-              </span>
-            </div>
-            
-            <div className={`lg:w-1/2 order-1 lg:order-2} mb-10 lg:mb-0`}>
-              <div className="relative">
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-100 rounded-lg z-0"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-200 rounded-lg z-0"></div>
-                <div className="relative z-10">
-                  <img 
-                    className="w-full h-auto rounded-lg shadow-xl" 
-                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/940bb46e3d-74fa44542223cb03f620.png" 
-                    alt="professional business website mockup" 
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -242,62 +94,6 @@ export default async function Services({
                 </ul>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* E-Commerce Solutions Section */}
-      <section id="ecommerce-solutions" className="bg-gray-50 py-20 px-6">
-        <div className="container mx-auto">
-          <div className={`flex flex-col lg:flex-row items-center gap-12`}>
-            <div className={`lg:w-1/2 mb-10 lg:mb-0`}>
-              <div className="relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-100 rounded-lg z-0"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-200 rounded-lg z-0"></div>
-                <div className="relative z-10">
-                  <img 
-                    className="w-full h-auto rounded-lg shadow-xl" 
-                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f7a8fb206c-381048f0342df0a040ca.png" 
-                    alt="modern e-commerce website interface" 
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className={`lg:w-1/2`}>
-              <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">
-                {dictionary.services.ecommerce.badge}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4 mb-6">
-                {dictionary.services.ecommerce.title}
-              </h2>
-              <p className="text-gray-600 mb-6">
-                {dictionary.services.ecommerce.description}
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                {dictionary.services.ecommerce.features.map((feature: any, index: number) => (
-                  <div key={index} className={`flex items-start`}>
-                    <div className={`w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1`}>
-                      <i className={`fa-solid ${
-                        index === 0 ? "fa-cart-shopping" :
-                        index === 1 ? "fa-credit-card" :
-                        index === 2 ? "fa-box" :
-                        "fa-chart-line"
-                      } text-blue-600`}></i>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-1">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <span className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 inline-block cursor-pointer">
-                {dictionary.services.ecommerce.cta}
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -359,51 +155,6 @@ export default async function Services({
         </div>
       </section>
 
-      {/* Development Process */}
-      <section id="development-process" className="bg-blue-700 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {dictionary.services.process.title}
-            </h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
-              {dictionary.services.process.description}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {dictionary.services.process.steps.map((step: ProcessStep, index: number) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6 relative">
-                  <span className="text-blue-700 font-bold text-xl">{step.number}</span>
-                  {index < 3 && (
-                    <div className="absolute h-1 bg-blue-100 w-full right-0 top-1/2 transform translate-x-full -z-10 hidden lg:block"></div>
-                  )}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="cta-section" className="bg-gray-50 py-20 px-6">
-        <div className="container mx-auto max-w-4xl bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-xl py-16 px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            {dictionary.home.callToAction.title}
-          </h2>
-          <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
-            {dictionary.home.callToAction.description}
-          </p>
-          <div className={`flex flex-col sm:flex-row justify-center gap-4`}>
-            <span className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-blue-700 transition-colors duration-300 cursor-pointer">
-              {dictionary.navigation.contact}
-            </span>
-          </div>
-        </div>
-      </section>
     </>
   )
 } 

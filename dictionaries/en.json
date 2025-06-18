@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "title": "Nibras Dev",
+    "title": "Nibras Enterprise Technologies",
     "home": "Home",
     "about": "About",
     "contact": "Contact",
@@ -10,8 +10,8 @@
     "title": "Welcome to our Bilingual App",
     "description": "This is a Next.js application with support for both English and Arabic languages.",
     "hero": {
-      "title": "Transform Your Ideas Into Digital Reality",
-      "description": "We build innovative software solutions that drive business growth and deliver exceptional user experiences.",
+      "title": "Develop your business and benefit from the latest technologies",
+      "description": "We build innovative software solutions that drive business growth and deliver exceptional user experiences from ERP and CRM systems to integrated applications to implementing the digital infrastructure of companies.",
       "services": "Our Services",
       "contact": "Contact Us"
     },
@@ -45,7 +45,7 @@
         ]
       },
       "learnMore": "Learn more",
-      "viewDetails": "View Service Details"
+      "viewDetails": "View Services Details"
     },
     "about": {
       "title": "About Nibras Dev",
@@ -327,7 +327,7 @@
     }
   },
   "footer": {
-    "about": "We are a leading web development company specializing in creating innovative digital solutions for businesses worldwide.",
+    "about": "A specialized company in technical solutions for the business world, from information systems to integrated applications",
     "quickLinks": "Quick Links",
     "services": "Services",
     "contact": "Contact Info",
@@ -395,7 +395,7 @@
       "title": "Our Contact Information",
       "location": {
         "title": "Office Location",
-        "address": "123 Tech Park, Innovation District",
+        "address": "Albaramkah, Damascus / Syria",
         "city": "San Francisco, CA 94105"
       },
       "phone": {
