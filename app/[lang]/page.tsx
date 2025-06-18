@@ -15,7 +15,7 @@ interface Testimonial {
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { lang } = await params
   const dictionary = await getDictionary(lang as Locale)
-  
+
   // Arabic metadata
   if (lang === 'ar') {
     return {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
       description: 'نبني حلول برمجية مبتكرة تدفع نمو الأعمال وتقدم تجربة مستخدم استثنائية من أنظمة ERP وCRM والتطبيقات المتكاملة إلى تنفيذ البنية التحتية الرقمية للشركات.',
     }
   }
-  
+
   // English metadata
   return {
     title: 'Nibras Enterprise Technologies',
@@ -89,61 +89,75 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services-section" className="bg-gray-50 py-20 px-6">
+      {/* Provided Enterprise Technologies (blue cards, one word, no details) */}
+      <section id="enterprise-technologies" className="bg-white mt-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{dictionary.home.services.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">{dictionary.home.services.description}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              {dictionary.services.enterpriseTechnologies.title}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {dictionary.services.enterpriseTechnologies.description}
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div id="service-card-1" className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <i className="fa-solid fa-globe text-2xl text-blue-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{dictionary.home.services.business.title}</h3>
-              <p className="text-gray-600 mb-6">{dictionary.home.services.business.description}</p>
-              <ul className="text-gray-600 mb-6 space-y-2">
-                {dictionary.home.services.business.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center">
-                    <i className="fa-solid fa-check text-blue-600 mr-2"></i>{feature}
-                  </li>
-                ))}
-              </ul>
-              <span className="text-blue-600 font-medium flex items-center cursor-pointer">
-                {dictionary.home.services.learnMore} <i className="fa-solid fa-arrow-right ml-2"></i>
-              </span>
-            </div>
-
-            <div id="service-card-2" className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <i className="fa-solid fa-shop text-2xl text-blue-600"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{dictionary.home.services.ecommerce.title}</h3>
-              <p className="text-gray-600 mb-6">{dictionary.home.services.ecommerce.description}</p>
-              <ul className="text-gray-600 mb-6 space-y-2">
-                {dictionary.home.services.ecommerce.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center">
-                    <i className="fa-solid fa-check text-blue-600 mr-2"></i>{feature}
-                  </li>
-                ))}
-              </ul>
-              <span className="text-blue-600 font-medium flex items-center cursor-pointer">
-                {dictionary.home.services.learnMore} <i className="fa-solid fa-arrow-right ml-2"></i>
-              </span>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {dictionary.services.enterpriseTechnologies.items.map((item: any, index: number) => {
+              const icons = [
+                "fa-network-wired", // ERP
+                "fa-utensils", // POS Restaurants
+                "fa-store", // POS Shops
+                "fa-truck-moving", // Fleet
+                "fa-industry", // Manufacturing
+                "fa-warehouse", // Inventories
+                "fa-chalkboard-teacher", // Learning
+                "fa-video", // Security camera
+                "fa-project-diagram", // Networks
+                "fa-cloud" // Cloud
+              ];
+              const keywordsEn = [
+                "ERP",
+                "Restaurants POS",
+                "Shops POS",
+                "Fleet",
+                "Manufacturing",
+                "Inventory",
+                "Learning",
+                "CCTV",
+                "Network",
+                "Cloud"
+              ];
+              const keywordsAr = [
+                "إدارة",
+                "نقاط بيع المطاعم",
+                "نقاط بيع المتاجر",
+                "أسطول",
+                "تصنيع",
+                "مخزون",
+                "تعليم",
+                "كاميرات",
+                "شبكات",
+                "الحوسبة السحابية"
+              ];
+              const icon = icons[index] || "fa-cubes";
+              const keyword = lang === 'ar' ? (keywordsAr[index] || item.title.split(' ')[0]) : (keywordsEn[index] || item.title.split(' ')[0]);
+              return (
+                <div key={index} className="bg-gradient-to-br from-blue-700 to-blue-500 rounded-xl p-8 flex flex-col items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                    <i className={`fa-solid ${icon} text-2xl text-white`}></i>
+                  </div>
+                  <span className="text-white text-xl font-bold tracking-wide uppercase">{keyword}</span>
+                </div>
+              );
+            })}
           </div>
-
-          <div className="text-center mt-12">
-            <a href={`/${lang}/services`} className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
-              {dictionary.home.services.viewDetails}
-            </a>
-          </div>
+        </div>
+        <div className="text-center mt-12">
+          <Link href={`/${lang}/services`} className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition-colors duration-300 text-center cursor-pointer whitespace-nowrap">
+            {dictionary.home.services.viewDetails}
+          </Link>
         </div>
       </section>
 
-      
       {/* Development Process */}
       <section id="development-process" className="bg-blue-700 py-20 px-6">
         <div className="container mx-auto">
@@ -155,7 +169,7 @@ export default async function Home({
               {dictionary.services.process.description}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {dictionary.services.process.steps.map((step: any, index: number) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-md">
